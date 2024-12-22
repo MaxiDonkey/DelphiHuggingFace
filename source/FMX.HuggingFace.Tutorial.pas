@@ -1,5 +1,15 @@
 unit FMX.HuggingFace.Tutorial;
 
+{ Tutorial Support Unit
+
+   WARNING:
+     This module is intended solely to illustrate the examples provided in the
+     README.md file of the repository :
+         https://github.com/MaxiDonkey/DelphiHuggingFace
+     Under no circumstances should the methods described below be used outside
+     of the examples presented on the repository's page.
+}
+
 interface
 
 uses
