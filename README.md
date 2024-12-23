@@ -191,6 +191,49 @@ var HFHub := THuggingFaceFactory.CreateInstance(API_KEY, True);
 A filtered list of models can be obtained directly from the [playground](https://huggingface.co/spaces/enzostvs/hub-api-playground). 
 Using **Delphi**, this list can also be retrieved programmatically. To support filtering, the `TFetchParams` class, implemented in the `HuggingFace.Hub.Support` unit, must be used. This class accurately mirrors all parameters supported by the `/api/models` endpoint.
 
+**Synchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator; 
+
+  var Models := HF.Hub.FetchModels(HFTutorial.UrlNext,
+    procedure (Params: TFetchParams)
+    begin
+      Params.Limit(50);
+      Params.Filter('eng,text-generation');
+    end);
+  try
+    Display(HFTutorial, Models);
+  finally
+    Models.Free;
+  end;
+```
+
+- **Remark: ** A paginated result will be returned, containing 50 models per page. 
+The `HFTutorial.UrlNext` variable will store the URL of the next page. By re-executing this code, the next 50 results will be retrieved and displayed.
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator; 
+
+  HF.Hub.FetchModels(HFTutorial.UrlNext,
+    procedure (Params: TFetchParams)
+    begin
+      Params.Limit(50);
+      Params.Filter('text-to-audio');
+    end,
+    function : TAsynModels
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+    end);
+```
+
+>[!TIP]
+> The filter parameter queries the Tags field in the models' JSON format. Use a comma to separate different Tags values to include them in the same filter.
+>
+
 <br/>
 
 # Contributing
