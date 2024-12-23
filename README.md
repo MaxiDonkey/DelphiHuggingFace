@@ -14,6 +14,7 @@ ___
     - [Serverless Inference API](#Serverless-Inference-API)
     - [Advantages of using Hugging Face Hub](#Advantages-of-using-Hugging-Face-Hub)
     - [Rate Limits and Supported Models](#Rate-Limits-and-Supported-Models)
+    - [Tutorial content](#Tutorial-content)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -57,6 +58,12 @@ By subscribing, you gain access to thousands of models. You can explore the bene
 
 - [Rate limits](https://huggingface.co/docs/api-inference/rate-limits)
 - [Supported models](https://huggingface.co/docs/api-inference/supported-models)
+
+<br/>
+
+## Tutorial content
+
+**Hugging Face Hub** provides open-source libraries such as `Transformers`, enables integration with `Gradio`, and offers evaluation tools like `Evaluate`. These aspects will not be covered in this tutorial, as they are beyond the scope of this document.
 
 <br/>
 
