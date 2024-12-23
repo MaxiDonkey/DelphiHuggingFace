@@ -103,8 +103,6 @@ To initialize the API instance, you need to [obtain an API key from Hugging Face
 
 Once you have a token, you can initialize `IHuggingFace` interface, which is an entry point to the API.
 
-Due to the fact that there can be many parameters and not all of them are required, they are configured using an anonymous function.
-
 > [!NOTE]
 >```Pascal
 >uses HuggingFace;
