@@ -112,7 +112,7 @@ Due to the fact that there can be many parameters and not all of them are requir
 >var HuggingFace := THuggingFaceFactory.CreateInstance(API_KEY);
 >```
 
-When accessing the list of models or retrieving the description of a specific model, a different endpoint is used than the API endpoint. To instantiate this interface, use the following code:
+When accessing the `list of models` or retrieving the `description of a specific model`, a different endpoint is used than the API endpoint. To instantiate this interface, use the following code:
 
 ```Pascal
 uses HuggingFace;
