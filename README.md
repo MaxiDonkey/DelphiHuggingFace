@@ -391,6 +391,27 @@ The dataset used to fine-tune the original pre-trained model is the RAVDESS data
   emotions = ['angry', 'calm', 'disgust', 'fearful', 'happy', 'neutral', 'sad', 'surprised']
 ```
 
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.WaitForModel := True;
+
+  HuggingFace.Audio.Classification(
+    procedure (Params: TAudioClassificationParam)
+    begin
+      Params.Model('ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition');
+      Params.Inputs('VoiceRecorded.wav');
+    end,
+    function : TAsynAudioClassification
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+
 <br>
 
 # Contributing
