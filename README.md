@@ -227,6 +227,7 @@ The `HFTutorial.UrlNext` variable will store the URL of the next page. By re-exe
     begin
       Result.Sender := HFTutorial;
       Result.OnSuccess := Display;
+      Result.OnError := Display;
     end);
 ```
 
