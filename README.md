@@ -235,6 +235,10 @@ The `HFTutorial.UrlNext` variable will store the URL of the next page. By re-exe
     end);
 ```
 
+>[!TIP]
+> The filter parameter queries the `Tags` field in the models' JSON format. Use a comma to separate different `Tags` values to include them in the same filter.
+>
+
 <br/>
 
 To visualize a model's data, utilize its model ID with the FetchModel method :
@@ -247,11 +251,6 @@ To visualize a model's data, utilize its model ID with the FetchModel method :
   //Asynchronously
   procedure FetchModel(const RepoId: string; CallBacks: TFunc<TAsynRepoModel>); overload;
 ```
-
-
->[!TIP]
-> The filter parameter queries the `Tags` field in the models' JSON format. Use a comma to separate different `Tags` values to include them in the same filter.
->
 
 <br/>
 
