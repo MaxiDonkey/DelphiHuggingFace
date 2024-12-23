@@ -72,11 +72,15 @@ When integrating models or datasets from **Hugging Face Hub** into your projects
 - Respect for creators' rights: Licenses protect the rights of creators. By respecting them, you acknowledge and honor their work.
 - Transparency and ethics: Following the conditions of licenses promotes responsible and ethical use of open-source technologies.
 
+Refer to the `Model Card` or `Dataset Card` for each model or dataset used in your application.
+
 <br/>
 
 ## Tutorial content
 
-**Hugging Face Hub** provides open-source libraries such as `Transformers`, enables integration with `Gradio`, and offers evaluation tools like `Evaluate`. These aspects will not be covered in this tutorial, as they are beyond the scope of this document.
+The Hugging Face Hub provides open-source libraries such as `Transformers`, enables integration with `Gradio`, and offers evaluation tools like `Evaluate`. However, these aspects will not be covered in this tutorial, as they are beyond the scope of this document.
+
+Instead, this tutorial will focus on using the APIs with Delphi, highlighting key features such as image and sound classification, music generation (`music-gen`), sentiment analysis, object detection in images, image segmentation, and all natural language processing (NLP) functions.
 
 <br/>
 
