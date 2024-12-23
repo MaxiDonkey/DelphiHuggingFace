@@ -14,6 +14,7 @@ ___
     - [Serverless Inference API](#Serverless-Inference-API)
     - [Advantages of using Hugging Face Hub](#Advantages-of-using-Hugging-Face-Hub)
     - [Rate Limits and Supported Models](#Rate-Limits-and-Supported-Models)
+    - [Licenses and Compliance](#Licenses-and-Compliance)
     - [Tutorial content](#Tutorial-content)
 - [Contributing](#contributing)
 - [License](#license)
@@ -58,6 +59,18 @@ By subscribing, you gain access to thousands of models. You can explore the bene
 
 - [Rate limits](https://huggingface.co/docs/api-inference/rate-limits)
 - [Supported models](https://huggingface.co/docs/api-inference/supported-models)
+
+<br/>
+
+## Licenses and Compliance
+
+When integrating models or datasets from **Hugging Face Hub** into your projects, it is crucial to pay close attention to the associated licenses. Every resource hosted on the platform comes with a specific license that outlines the terms of use, modification, and distribution. A thorough understanding of these licenses is essential to ensure the legal and ethical compliance of your developments.
+
+**Why is this important?**
+
+- Legal compliance: Using a resource without adhering to its license terms can lead to legal violations, exposing your project to potential risks.
+- Respect for creators' rights: Licenses protect the rights of creators. By respecting them, you acknowledge and honor their work.
+- Transparency and ethics: Following the conditions of licenses promotes responsible and ethical use of open-source technologies.
 
 <br/>
 
