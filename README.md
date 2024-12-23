@@ -21,7 +21,7 @@ ___
 - [Usage](#usage)
     - [Initialization](#initialization)
     - [Hugging Face Models Overview](#Hugging-Face-Models-Overview)
-        - [Model inference](#Model-inference)
+        - [Model inference WARM COLD](#Model-inference-WARM-COLD)
     - [Music-gen](#Music-gen)
 - [Contributing](#contributing)
 - [License](#license)
@@ -255,7 +255,7 @@ To visualize a model's data, utilize its model ID with the FetchModel method :
 
 <br/>
 
-### Model inference
+### Model inference WARM COLD
 
 The ML ecosystem evolves rapidly, and the Inference API provides access to models highly valued by the community, selected based on their recent popularity (likes, downloads, and usage). As a result, the available models may be replaced at any time without prior notice. Hugging Face strives to keep the most recent and popular models ready for immediate use.
 
@@ -274,7 +274,7 @@ To avoid the 503 error and wait for the model to reload and transition to the `W
 
 Note : By default, the value of `WaitForModel` is set to False.
 
-Refer to [official documentation] (https://huggingface.co/docs/api-inference/parameters)
+Refer to [official documentation](https://huggingface.co/docs/api-inference/parameters)
 
 <br/>
 
