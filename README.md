@@ -13,6 +13,7 @@ ___
     - [Resources available on Hugging Face Hub](#Resources-available-on-Hugging-Face-Hub)
     - [Serverless Inference API](#Serverless-Inference-API)
     - [Advantages of using Hugging Face Hub](#Advantages-of-using-Hugging-Face-Hub)
+    - [Rate Limits and Supported Models](#Rate-Limits-and-Supported-Models)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -47,6 +48,15 @@ Hugging Face Hub offers a robust Inference API, enabling rapid integration of AI
 <br/>
 
 In summary, Hugging Face Hub is a valuable resource for integrating advanced AI models into your projects. With its serverless Inference API and extensive collection of ready-to-use resources, it offers an ideal solution to enhance your applications with modern AI capabilities while simplifying their implementation and maintenance.
+
+<br/>
+
+## Rate Limits and Supported Models
+
+By subscribing, you gain access to thousands of models. You can explore the benefits of individual, professional, and enterprise subscriptions by following the links below:
+
+- [Rate limits](https://huggingface.co/docs/api-inference/rate-limits)
+- [Supported models](https://huggingface.co/docs/api-inference/supported-models)
 
 <br/>
 
