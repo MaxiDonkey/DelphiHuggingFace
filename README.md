@@ -81,6 +81,8 @@ The **Hugging Face Hub** provides open-source libraries such as `Transformers`, 
 
 Instead, this tutorial will focus on using the APIs with Delphi, highlighting key features such as image and sound classification, music generation (`music-gen`), sentiment analysis, object detection in images, image segmentation, and all natural language processing (NLP) functions.
 
+First, make sure to obtain a usage key, which you can manage through this [link](https://huggingface.co/settings/tokens)
+
 <br/>
 
 # Contributing
