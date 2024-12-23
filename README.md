@@ -17,6 +17,8 @@ ___
     - [Licenses and Compliance](#Licenses-and-Compliance)
     - [Tutorial content](#Tutorial-content)
 - [Remarks](#remarks)
+- [Usage](#usage)
+    - [Initialization](#initialization)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -82,8 +84,6 @@ The **Hugging Face Hub** provides open-source libraries such as `Transformers`, 
 
 Instead, this tutorial will focus on using the APIs with Delphi, highlighting key features such as image and sound classification, music generation (`music-gen`), sentiment analysis, object detection in images, image segmentation, and all natural language processing (NLP) functions.
 
-First, make sure to obtain a usage key, which you can manage through this [link](https://huggingface.co/settings/tokens)
-
 <br/>
 
 # Remarks
@@ -92,6 +92,32 @@ First, make sure to obtain a usage key, which you can manage through this [link]
 >
 > This is an unofficial library. **Hugging Face** does not provide any official library for `Delphi`.
 > This repository contains `Delphi` implementation over [Hugging Face](https://huggingface.co/docs/api-inference) public API.
+
+<br/>
+
+# Usage
+
+## Initialization
+
+To initialize the API instance, you need to [obtain an API key from Hugging Face](https://huggingface.co/settings/tokens).
+
+Once you have a token, you can initialize `IHuggingFace` interface, which is an entry point to the API.
+
+Due to the fact that there can be many parameters and not all of them are required, they are configured using an anonymous function.
+
+> [!NOTE]
+>```Pascal
+>uses HuggingFace;
+>
+>var HuggingFace := THuggingFaceFactory.CreateInstance(API_KEY);
+>```
+
+>[!Warning]
+> To use the examples provided in this tutorial, especially to work with asynchronous methods, I recommend defining the HuggingFace interface with the widest possible scope.
+><br/>
+> So, set `HuggingFace := THuggingFaceFactory.CreateInstance(My_Key);` in the `OnCreate` event of your application.
+><br>
+>Where `HuggingFace: IHuggingFace;`
 
 <br/>
 
