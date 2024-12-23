@@ -337,7 +337,7 @@ The DETR model is an encoder-decoder transformer with a convolutional backbone.
     end);
 ```
 
-![Object Detection](https://github.com/MaxiDonkey/DelphiHuggingFace/tree/assets/images/ObjectDetection.png)
+![Object Detection](https://github.com/MaxiDonkey/DelphiHuggingFace/tree/assets/images/images/ObjectDetection.png)
 
 <br/>
 
