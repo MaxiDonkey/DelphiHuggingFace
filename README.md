@@ -142,7 +142,7 @@ In the context of asynchronous methods, for a method that does not involve strea
 ```
 <br/>
 
-For methods requiring streaming, callbacks use the generic record `TAsynStreamCallBack<T> = record`, also defined in the `HuggingFace..Async.Support.pas` unit. This record exposes the following properties:
+For methods requiring streaming, callbacks use the generic record `TAsynStreamCallBack<T> = record`, also defined in the `HuggingFace.Async.Support.pas` unit. This record exposes the following properties:
 
 ```Pascal
    TAsynCallBack<T> = record
