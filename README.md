@@ -22,7 +22,7 @@ ___
 # Introduction
 
 **Hugging Face Hub** is an open-source collaborative platform dedicated to democratizing access to artificial intelligence (AI) technologies. This platform hosts a vast collection of models, datasets, and interactive applications, facilitating the exploration, experimentation, and integration of AI solutions into various projects.
-[see : ](https://huggingface.co/docs/hub/index)
+[Official page](https://huggingface.co/docs/hub/index)
 
 ## Resources available on Hugging Face Hub
 
