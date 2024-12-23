@@ -1,4 +1,4 @@
-# Delphi HuggingFace API
+# Delphi Hugging Face API
 
 ___
 ![GitHub](https://img.shields.io/badge/IDE%20Version-Delphi%2010.3/11/12-yellow)
