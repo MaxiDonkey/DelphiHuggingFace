@@ -17,6 +17,7 @@ ___
     - [Licenses and Compliance](#Licenses-and-Compliance)
     - [Tutorial content](#Tutorial-content)
 - [Remarks](#remarks)
+- [Tools for simplifying this tutorial](#Tools-for-simplifying-this-tutorial)
 - [Usage](#usage)
     - [Initialization](#initialization)
     - [Asynchronous callback mode management](#Asynchronous-callback-mode-management)
@@ -94,6 +95,30 @@ Instead, this tutorial will focus on using the APIs with Delphi, highlighting ke
 >
 > This is an unofficial library. **Hugging Face** does not provide any official library for `Delphi`.
 > This repository contains `Delphi` implementation over [Hugging Face](https://huggingface.co/docs/api-inference) public API.
+
+<br/>
+
+# Tools for simplifying this tutorial
+
+To simplify the example codes provided in this tutorial, I have included two units in the source code: `VCL.Stability.Tutorial` and `FMX.Stability.Tutorial`. Depending on the option you choose to test the provided source code, you will need to instantiate either the `TVCLStabilitySender` or `TFMXStabilitySender` class in the application's `OnCreate` event, as follows:
+
+>[!TIP]
+>```Pascal
+>//uses VCL.HuggingFace.Tutorial;
+>
+>  HFTutorial := TVCLHuggingFaceSender.Create(Memo1, Image1, Image2, MediaPlayer1);
+>```
+>
+>or
+>
+>```Pascal
+>//uses FMX.HuggingFace.Tutorial;
+>
+>  HFTutorial := TFMXHuggingFaceSender.Create(Memo1, Image1, Image2, MediaPlayer1);
+>```
+>
+
+Make sure to add a `TMemo`, two `TImage` and a `TMediaPlayer` component to your form beforehand.
 
 <br/>
 
