@@ -21,6 +21,7 @@ ___
 - [Usage](#usage)
     - [Initialization](#initialization)
     - [Hugging Face Models Overview](#Hugging-Face-Models-Overview)
+        - [Model inference](#Model-inference)
     - [Music-gen](#Music-gen)
 - [Contributing](#contributing)
 - [License](#license)
@@ -245,13 +246,35 @@ The `HFTutorial.UrlNext` variable will store the URL of the next page. By re-exe
 To visualize a model's data, utilize its model ID with the FetchModel method :
 
 ```Pascal
-
   //Synchronously
   function FetchModel(const RepoId: string): TRepoModel; overload;
 
   //Asynchronously
   procedure FetchModel(const RepoId: string; CallBacks: TFunc<TAsynRepoModel>); overload;
 ```
+
+<br/>
+
+### Model inference
+
+The ML ecosystem evolves rapidly, and the Inference API provides access to models highly valued by the community, selected based on their recent popularity (likes, downloads, and usage). As a result, the available models may be replaced at any time without prior notice. Hugging Face strives to keep the most recent and popular models ready for immediate use.
+
+The following distinctions are made:
+
+- **Hot models:** models that are ready to use.
+- **Cold models:** models that require loading before use.
+- **Frozen models:** models currently unavailable for use via the API.
+
+When invoking a model in the `COLD` state, it needs to be reloaded, which may result in a 503 error. In this case, you must wait before retrying the request with the same model.
+To avoid the 503 error and wait for the model to reload and transition to the `WARM` state, you can add the following line of code:
+
+```Pascal
+  HuggingFace.WaitForModel := True;
+```
+
+Note : By default, the value of `WaitForModel` is set to False.
+
+Refer to [official documentation] (https://huggingface.co/docs/api-inference/parameters)
 
 <br/>
 
@@ -262,9 +285,8 @@ To visualize a model's data, utilize its model ID with the FetchModel method :
 **Asynchronously code example**
 
 ```Pascal
-
-  HuggingFace.UseCache := False;
-  HuggingFace.WaitForModel := True;
+  HuggingFace.UseCache := False;  //Disable caching
+  HuggingFace.WaitForModel := True;  //Enable waiting for model reloading
   HFTutorial.FileName := 'music.mp3';
 
   HuggingFace.Text.TextToAudio(
