@@ -16,6 +16,7 @@ ___
     - [Rate Limits and Supported Models](#Rate-Limits-and-Supported-Models)
     - [Licenses and Compliance](#Licenses-and-Compliance)
     - [Tutorial content](#Tutorial-content)
+- [Remarks](#remarks)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -82,6 +83,15 @@ The **Hugging Face Hub** provides open-source libraries such as `Transformers`, 
 Instead, this tutorial will focus on using the APIs with Delphi, highlighting key features such as image and sound classification, music generation (`music-gen`), sentiment analysis, object detection in images, image segmentation, and all natural language processing (NLP) functions.
 
 First, make sure to obtain a usage key, which you can manage through this [link](https://huggingface.co/settings/tokens)
+
+<br/>
+
+# Remarks
+
+> [!IMPORTANT]
+>
+> This is an unofficial library. **Hugging Face** does not provide any official library for `Delphi`.
+> This repository contains `Delphi` implementation over [Hugging Face](https://huggingface.co/docs/api-inference) public API.
 
 <br/>
 
