@@ -188,6 +188,9 @@ var HFHub := THuggingFaceFactory.CreateInstance(API_KEY, True);
 
 ## Hugging Face Models Overview
 
+A filtered list of models can be obtained directly from the [playground](https://huggingface.co/spaces/enzostvs/hub-api-playground). 
+Using **Delphi**, this list can also be retrieved programmatically. To support filtering, the `TFetchParams` class, implemented in the `HuggingFace.Hub.Support` unit, must be used. This class accurately mirrors all parameters supported by the `/api/models` endpoint.
+
 <br/>
 
 # Contributing
