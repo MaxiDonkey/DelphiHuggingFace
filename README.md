@@ -387,7 +387,7 @@ The model is a fine-tuned version of `jonatasgrosman/wav2vec2-large-xlsr-53-engl
 
 The dataset used to fine-tune the original pre-trained model is the RAVDESS dataset. This dataset provides 1440 samples of recordings from actors performing on 8 different emotions in English, which are:
 
-```Text 
+```Python
   emotions = ['angry', 'calm', 'disgust', 'fearful', 'happy', 'neutral', 'sad', 'surprised']
 ```
 
