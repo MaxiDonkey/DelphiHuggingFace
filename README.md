@@ -9,24 +9,7 @@ ___
 <br/>
 
 
-- [Introduction](#Introduction)
-    - [Resources available on Hugging Face Hub](#Resources-available-on-Hugging-Face-Hub)
-    - [Serverless Inference API](#Serverless-Inference-API)
-    - [Advantages of using Hugging Face Hub](#Advantages-of-using-Hugging-Face-Hub)
-    - [Rate Limits and Supported Models](#Rate-Limits-and-Supported-Models)
-    - [Licenses and Compliance](#Licenses-and-Compliance)
-    - [Tutorial content](#Tutorial-content)
-- [Remarks](#remarks)
-- [Tools for simplifying this tutorial](#Tools-for-simplifying-this-tutorial)
-- [Asynchronous callback mode management](#Asynchronous-callback-mode-management)
-- [Usage](#usage)
-    - [Initialization](#initialization)
-    - [Hugging Face Models Overview](#Hugging-Face-Models-Overview)
-- [Contributing](#contributing)
-- [License](#license)
- 
-<br/>
-<br/>
+
 
 # Introduction
 
