@@ -402,7 +402,7 @@ The dataset used to fine-tune the original pre-trained model is the RAVDESS data
     procedure (Params: TAudioClassificationParam)
     begin
       Params.Model('ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition');
-      Params.Inputs('VoiceRecorded.wav');
+      Params.Inputs('SpeechRecorded.wav');
     end,
     function : TAsynAudioClassification
     begin
