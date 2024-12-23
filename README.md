@@ -261,7 +261,7 @@ The ML ecosystem evolves rapidly, and the Inference API provides access to model
 
 The following distinctions are made:
 
-- **Hot models:** models that are ready to use.
+- **Warm models:** models that are ready to use.
 - **Cold models:** models that require loading before use.
 - **Frozen models:** models currently unavailable for use via the API.
 
