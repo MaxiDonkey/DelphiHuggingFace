@@ -196,7 +196,7 @@ Using **Delphi**, this list can also be retrieved programmatically. To support f
 **Synchronously code example**
 
 ```Pascal
-// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator; 
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
 
   var Models := HF.Hub.FetchModels(HFTutorial.UrlNext,
     procedure (Params: TFetchParams)
@@ -219,7 +219,7 @@ The `HFTutorial.UrlNext` variable will store the URL of the next page. By re-exe
 **Asynchronously code example**
 
 ```Pascal
-// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator; 
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
 
   HF.Hub.FetchModels(HFTutorial.UrlNext,
     procedure (Params: TFetchParams)
