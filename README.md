@@ -101,7 +101,7 @@ Instead, this tutorial will focus on using the APIs with Delphi, highlighting ke
 
 To initialize the API instance, you need to [obtain an API key from Hugging Face](https://huggingface.co/settings/tokens).
 
-Once you have a token, you can initialize `IHuggingFace` interface, which is an entry point to the API.
+Once you have a token, you can initialize the `IHuggingFace` interface, which serves as the entry point to the API.
 
 > [!NOTE]
 >```Pascal
