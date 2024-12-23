@@ -37,7 +37,7 @@ ___
 
 ## Serverless Inference API
 
-Hugging Face Hub offers a robust Inference API, enabling rapid integration of AI models into your projects without the need for complex infrastructure management. This API facilitates the use of high-performance models for various tasks while ensuring optimized and scalable execution. [sapien.io](https://www.sapien.io/blog/what-is-hugging-face-a-review-of-its-key-features-and-tools?utm_source=chatgpt.com)
+Hugging Face Hub offers a robust Inference API, enabling rapid integration of AI models into your projects without the need for complex infrastructure management. This API facilitates the use of high-performance models for various tasks while ensuring optimized and scalable execution. 
 
 <br/>
 
