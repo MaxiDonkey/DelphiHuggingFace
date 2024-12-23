@@ -28,6 +28,7 @@ ___
     - [Audio classification](#Audio-classification)
         - [Speech emotion recognition](#speech-emotion-recognition)
         - [Gender recognition](#Gender-recognition)
+    - [Image classification](#Image-classification)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -445,6 +446,43 @@ This model is a fine-tuned version of facebook/wav2vec2-xls-r-300m on Librispeec
 
 >[!NOTE]
 > In the field of `audio classification`, over 2,800 pre-trained models are available, catering to a diverse array of ARL tasks such as speech recognition, music classification, and acoustic event detection. These models provide robust tools for feature extraction and can be fine-tuned with task-specific datasets to optimize performance for downstream applications.
+>
+
+<br/>
+
+## Image classification
+
+[ResNet-50 v1.5](https://huggingface.co/microsoft/resnet-50)
+ResNet model pre-trained on ImageNet-1k at resolution 224x224. It was introduced in the paper Deep Residual Learning for Image Recognition by He et al.
+
+ResNet (Residual Network) is a convolutional neural network that democratized the concepts of residual learning and skip connections. This enables to train much deeper models.
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  var ImageFilePath := 'images\tiger.jpg';
+  HFTutorial.LoadImageFromFile(ImageFilePath);
+  HuggingFace.WaitForModel := True;
+
+  HuggingFace.Image.Classification(
+    procedure (Params: TImageClassificationParam)
+    begin
+      Params.Model('microsoft/resnet-50');
+      //Params.Model('google/vit-base-patch16-224');  //Can be used too
+      Params.Inputs(ImageFilePath);
+    end,
+    function : TAsynImageClassification
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+
+>[!NOTE]
+> In the field of image classification`, over 15,000 pre-trained models are available
 >
 
 <br/>
