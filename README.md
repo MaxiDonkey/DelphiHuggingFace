@@ -191,6 +191,8 @@ var HFHub := THuggingFaceFactory.CreateInstance(API_KEY, True);
 A filtered list of models can be obtained directly from the [playground](https://huggingface.co/spaces/enzostvs/hub-api-playground). 
 Using **Delphi**, this list can also be retrieved programmatically. To support filtering, the `TFetchParams` class, implemented in the `HuggingFace.Hub.Support` unit, must be used. This class accurately mirrors all parameters supported by the `/api/models` endpoint.
 
+<br/>
+
 **Synchronously code example**
 
 ```Pascal
@@ -211,6 +213,8 @@ Using **Delphi**, this list can also be retrieved programmatically. To support f
 
 - **Remark :** A paginated result will be returned, containing 50 models per page. 
 The `HFTutorial.UrlNext` variable will store the URL of the next page. By re-executing this code, the next 50 results will be retrieved and displayed.
+
+<br/>
 
 **Asynchronously code example**
 
