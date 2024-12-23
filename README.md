@@ -149,7 +149,7 @@ For methods requiring streaming, callbacks use the generic record `TAsynStreamCa
    ... 
        Sender: TObject;
        OnStart: TProc<TObject>;
-       OnSuccess: TProc<TObject, T>;
+       OnSuccess: TProc<TObject>;
        OnProgress: TProc<TObject, T>;
        OnError: TProc<TObject, string>;
        OnCancellation: TProc<TObject>;
