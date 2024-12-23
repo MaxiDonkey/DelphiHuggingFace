@@ -23,6 +23,7 @@ ___
     - [Hugging Face Models Overview](#Hugging-Face-Models-Overview)
         - [Model inference WARM COLD](#Model-inference-WARM-COLD)
     - [Music-gen](#Music-gen)
+    - [Image object detection](#Image-object-detection)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -303,6 +304,10 @@ Refer to [official documentation](https://huggingface.co/docs/api-inference/para
       Result.OnError := Display;
     end);
 ```
+
+<br/>
+
+## Image object detection
 
 <br/>
 
