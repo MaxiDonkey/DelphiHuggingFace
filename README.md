@@ -27,6 +27,7 @@ ___
     - [Text To Sentiment analysis](#Text-To-Sentiment-analysis)
     - [Audio classification](#Audio-classification)
         - [Speech emotion recognition](#speech-emotion-recognition)
+        - [Gender recognition](#Gender-recognition)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -412,7 +413,41 @@ The dataset used to fine-tune the original pre-trained model is the RAVDESS data
     end);
 ```
 
-<br>
+<br/>
+
+### Gender recognition
+
+[wav2vec2-large-xlsr-53-gender-recognition-librispeech](https://huggingface.co/alefiury/wav2vec2-large-xlsr-53-gender-recognition-librispeech) <br/><br/>
+This model is a fine-tuned version of facebook/wav2vec2-xls-r-300m on Librispeech-clean-100 for gender recognition.
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.WaitForModel := True;
+
+  HuggingFace.Audio.Classification(
+    procedure (Params: TAudioClassificationParam)
+    begin
+      Params.Model('alefiury/wav2vec2-large-xlsr-53-gender-recognition-librispeech');
+      Params.Inputs('SpeechRecorded.wav');
+    end,
+    function : TAsynAudioClassification
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+
+<br/>
+
+>[!NOTE]
+> In the field of `audio classification`, over 2,800 pre-trained models are available, catering to a diverse array of ARL tasks such as speech recognition, music classification, and acoustic event detection. These models provide robust tools for feature extraction and can be fine-tuned with task-specific datasets to optimize performance for downstream applications.
+>
+
+<br/>
 
 # Contributing
 
