@@ -235,6 +235,18 @@ The `HFTutorial.UrlNext` variable will store the URL of the next page. By re-exe
     end);
 ```
 
+To visualize a model's data, utilize its model ID with the FetchModel method :
+
+```Pascal
+
+  //Synchronously
+  function FetchModel(const RepoId: string): TRepoModel; overload;
+
+  //Asynchronously
+  procedure FetchModel(const RepoId: string; CallBacks: TFunc<TAsynRepoModel>); overload;
+```
+
+
 >[!TIP]
 > The filter parameter queries the `Tags` field in the models' JSON format. Use a comma to separate different `Tags` values to include them in the same filter.
 >
