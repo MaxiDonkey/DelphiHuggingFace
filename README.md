@@ -286,6 +286,8 @@ Refer to [official documentation](https://huggingface.co/docs/api-inference/para
 **Asynchronously code example**
 
 ```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
   HuggingFace.UseCache := False;  //Disable caching
   HuggingFace.WaitForModel := True;  //Enable waiting for model reloading
   HFTutorial.FileName := 'music.mp3';
@@ -308,6 +310,34 @@ Refer to [official documentation](https://huggingface.co/docs/api-inference/para
 <br/>
 
 ## Image object detection
+
+[DEtection TRansformer (DETR) model](https://huggingface.co/facebook/detr-resnet-50) trained end-to-end on COCO 2017 object detection (118k annotated images).
+The DETR model is an encoder-decoder transformer with a convolutional backbone.
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  var ImageFilePath := 'Z:\My_Folder\Images\My_Image.jpg';
+  HFTutorial.LoadImageFromFile(ImageFilePath);
+  HuggingFace.WaitForModel := True;
+
+  HuggingFace.Image.ObjectDetection(
+    procedure (Params: TObjectDetectionParam)
+    begin
+      Params.Model('facebook/detr-resnet-50');
+      Params.Inputs(ImageFilePath);
+    end,
+    function : TAsynObjectDetection
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+
+![Object Detection](https://github.com/MaxiDonkey/DelphiHuggingFace/tree/assets/images/ObjectDetection.png)
 
 <br/>
 
