@@ -232,7 +232,7 @@ The `HFTutorial.UrlNext` variable will store the URL of the next page. By re-exe
 ```
 
 >[!TIP]
-> The filter parameter queries the Tags field in the models' JSON format. Use a comma to separate different Tags values to include them in the same filter.
+> The filter parameter queries the `Tags` field in the models' JSON format. Use a comma to separate different `Tags` values to include them in the same filter.
 >
 
 <br/>
