@@ -235,6 +235,8 @@ The `HFTutorial.UrlNext` variable will store the URL of the next page. By re-exe
     end);
 ```
 
+<br/>
+
 To visualize a model's data, utilize its model ID with the FetchModel method :
 
 ```Pascal
