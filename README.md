@@ -52,7 +52,7 @@ Hugging Face Hub offers a Inference API, enabling rapid integration of AI models
 
 <br/>
 
-In summary, **Hugging Face Hub** is a resource for integrating AI models into projects. With its serverless Inference API and collection of ready-to-use resources, it offers an solution to enhance applications with modern AI capabilities while simplifying their implementation and maintenance.
+In summary, **Hugging Face Hub** is a resource for integrating AI models into projects. With its serverless Inference API and collection of ready-to-use resources, it offers an solution to enhance applications with AI capabilities while simplifying their implementation and maintenance.
 
 <br/>
 
