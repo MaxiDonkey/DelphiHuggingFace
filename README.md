@@ -383,7 +383,7 @@ Labels: 0 -> Negative; 1 -> Neutral; 2 -> Positive
 ### Speech emotion recognition
 
 [Speech Emotion Recognition By Fine-Tuning Wav2Vec 2.0](https://huggingface.co/ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition) <br/>
-The model is a fine-tuned version of jonatasgrosman/wav2vec2-large-xlsr-53-english for a Speech Emotion Recognition (SER) task.
+The model is a fine-tuned version of `jonatasgrosman/wav2vec2-large-xlsr-53-english` for a Speech Emotion Recognition (SER) task.
 
 The dataset used to fine-tune the original pre-trained model is the RAVDESS dataset. This dataset provides 1440 samples of recordings from actors performing on 8 different emotions in English, which are:
 
