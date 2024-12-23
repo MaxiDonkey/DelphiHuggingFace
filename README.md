@@ -21,6 +21,7 @@ ___
 - [Usage](#usage)
     - [Initialization](#initialization)
     - [Hugging Face Models Overview](#Hugging-Face-Models-Overview)
+    - [Music-gen](#Music-gen)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -250,6 +251,35 @@ To visualize a model's data, utilize its model ID with the FetchModel method :
 
   //Asynchronously
   procedure FetchModel(const RepoId: string; CallBacks: TFunc<TAsynRepoModel>); overload;
+```
+
+<br/>
+
+## Music-gen
+
+[MusicGen](https://huggingface.co/facebook/musicgen-small) is a text-to-music model capable of genreating high-quality music samples conditioned on text descriptions or audio prompts.
+
+**Asynchronously code example**
+
+```Pascal
+
+  HuggingFace.UseCache := False;
+  HuggingFace.WaitForModel := True;
+  HFTutorial.FileName := 'music.mp3';
+
+  HuggingFace.Text.TextToAudio(
+    procedure (Params: TTextToAudioParam)
+    begin
+      Params.Model('facebook/musicgen-small');
+      Params.Inputs('Pop music style with bass guitar');
+    end,
+    function : TAsynTextToSpeech
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnStart := Start;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
 ```
 
 <br/>
