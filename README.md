@@ -351,8 +351,6 @@ This is a [RoBERTa-base model](https://huggingface.co/cardiffnlp/twitter-roberta
 
 Labels: 0 -> Negative; 1 -> Neutral; 2 -> Positive
 
-This sentiment analysis model has been integrated into [TweetNLP](https://github.com/cardiffnlp/timelms). You can access the demo [here](https://tweetnlp.org/).
-
 **Asynchronously code example**
 
 ```Pascal
