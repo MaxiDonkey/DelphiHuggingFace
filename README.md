@@ -487,7 +487,7 @@ Vision Transformer (ViT) model pre-trained on ImageNet-21k (14 million images, 2
 <br/>
 
 >[!NOTE]
-> In the field of image classification`, over 15,000 pre-trained models are available
+> In the field of `image classification`, over 15,000 pre-trained models are available
 >
 
 <br/>
