@@ -112,13 +112,6 @@ Due to the fact that there can be many parameters and not all of them are requir
 >var HuggingFace := THuggingFaceFactory.CreateInstance(API_KEY);
 >```
 
->[!Warning]
-> To use the examples provided in this tutorial, especially to work with asynchronous methods, I recommend defining the HuggingFace interface with the widest possible scope.
-><br/>
-> So, set `HuggingFace := THuggingFaceFactory.CreateInstance(My_Key);` in the `OnCreate` event of your application.
-><br>
->Where `HuggingFace: IHuggingFace;`
-
 When accessing the list of models or retrieving the description of a specific model, a different endpoint is used than the API endpoint. To instantiate this interface, use the following code:
 
 ```Pascal
@@ -126,6 +119,13 @@ uses HuggingFace;
 
 var HFHub := THuggingFaceFactory.CreateInstance(API_KEY, True);
 ```
+
+>[!Warning]
+> To use the examples provided in this tutorial, especially to work with asynchronous methods, I recommend defining the HuggingFace interface with the widest possible scope.
+><br/>
+> So, set `HuggingFace := THuggingFaceFactory.CreateInstance(My_Key);` in the `OnCreate` event of your application.
+><br>
+>Where `HuggingFace: IHuggingFace;`
 
 <br/>
 
