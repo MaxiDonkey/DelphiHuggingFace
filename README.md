@@ -29,8 +29,8 @@ ___
 
 ## Resources available on Hugging Face Hub
 
-- **Models:** The Hub offers a multitude of pre-trained models covering domains such as natural language processing (NLP), computer vision, and audio recognition. These models are suited for various tasks, including text generation, classification, object detection, and speech transcription. [scalablepath](https://www.scalablepath.com/machine-learning/hugging-face?utm_source=chatgpt.com)
-- **Datasets:** A diverse library of datasets is available for training and evaluating your own models, providing a solid foundation for developing customized solutions. [apix-drive](https://apix-drive.com/en/blog/useful/what-is-hugging-face?utm_source=chatgpt.com)
+- **Models:** The Hub offers a multitude of pre-trained models covering domains such as natural language processing (NLP), computer vision, and audio recognition. These models are suited for various tasks, including text generation, classification, object detection, and speech transcription. 
+- **Datasets:** A diverse library of datasets is available for training and evaluating your own models, providing a solid foundation for developing customized solutions. 
 - **Spaces:** The Hub hosts interactive applications that allow you to visualize and test models directly from a browser. These spaces are useful for demonstrating model capabilities or conducting quick analyses. 
 
 <br/>
