@@ -48,7 +48,7 @@ Hugging Face Hub offers a Inference API, enabling rapid integration of AI models
 ## Advantages of using Hugging Face Hub
 
 - **Time-saving:** Models are ready to use, eliminating the need to train or deploy them locally, which accelerates the development of applications.
-- **Scalability:** The Hub's infrastructure ensures automatic scaling, load balancing, and efficient caching, ideal for production applications.
+- **Scalability:** The Hub's infrastructure ensures automatic scaling, load balancing, and efficient caching.
 
 <br/>
 
