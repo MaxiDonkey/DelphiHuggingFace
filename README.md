@@ -24,6 +24,7 @@ ___
         - [Model inference WARM COLD](#Model-inference-WARM-COLD)
     - [Music-gen](#Music-gen)
     - [Image object detection](#Image-object-detection)
+    - [Text To Sentiment analysis](#Text-To-Sentiment-analysis)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -338,6 +339,40 @@ The DETR model is an encoder-decoder transformer with a convolutional backbone.
 ```
 
 ![Alt text](/../main/images/ObjectDetection.png?raw=true "Object detection")
+
+<br/>
+
+## Text To Sentiment analysis
+
+This is a [RoBERTa-base model](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest) trained on ~124M tweets from January 2018 to December 2021, and finetuned for sentiment analysis with the TweetEval benchmark. 
+
+- **Reference Paper:** [TimeLMs paper](https://arxiv.org/abs/2202.03829).
+- **Git Repo:** [TimeLMs official repository](https://github.com/cardiffnlp/timelms).
+
+Labels: 0 -> Negative; 1 -> Neutral; 2 -> Positive
+
+This sentiment analysis model has been integrated into [TweetNLP](https://github.com/cardiffnlp/timelms). You can access the demo [here](https://tweetnlp.org/).
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.WaitForModel := True;
+
+  HuggingFace.Text. SentimentAnalysis(
+    procedure (Params: TSentimentAnalysisParams)
+    begin
+      Params.Model('cardiffnlp/twitter-roberta-base-sentiment-latest');
+      Params.Inputs('Today is a great day');
+    end,
+    function : TAsynSentimentAnalysis
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
 
 <br/>
 
