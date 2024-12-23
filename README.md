@@ -18,9 +18,9 @@ ___
     - [Tutorial content](#Tutorial-content)
 - [Remarks](#remarks)
 - [Tools for simplifying this tutorial](#Tools-for-simplifying-this-tutorial)
+- [Asynchronous callback mode management](#Asynchronous-callback-mode-management)
 - [Usage](#usage)
     - [Initialization](#initialization)
-    - [Asynchronous callback mode management](#Asynchronous-callback-mode-management)
     - [Hugging Face Models Overview](#Hugging-Face-Models-Overview)
 - [Contributing](#contributing)
 - [License](#license)
@@ -122,6 +122,38 @@ Make sure to add a `TMemo`, two `TImage` and a `TMediaPlayer` component to your 
 
 <br/>
 
+# Asynchronous callback mode management
+
+In the context of asynchronous methods, for a method that does not involve streaming, callbacks use the following generic record: `TAsynCallBack<T> = record` defined in the `HuggingFace.Async.Support.pas` unit. This record exposes the following properties:
+
+```Pascal
+   TAsynCallBack<T> = record
+   ... 
+       Sender: TObject;
+       OnStart: TProc<TObject>;
+       OnSuccess: TProc<TObject, T>;
+       OnError: TProc<TObject, string>; 
+```
+<br/>
+
+For methods requiring streaming, callbacks use the generic record `TAsynStreamCallBack<T> = record`, also defined in the `HuggingFace.Async.Support.pas` unit. This record exposes the following properties:
+
+```Pascal
+   TAsynCallBack<T> = record
+   ... 
+       Sender: TObject;
+       OnStart: TProc<TObject>;
+       OnSuccess: TProc<TObject>;
+       OnProgress: TProc<TObject, T>;
+       OnError: TProc<TObject, string>;
+       OnCancellation: TProc<TObject>;
+       OnDoCancel: TFunc<Boolean>;
+```
+
+The name of each property is self-explanatory; if needed, refer to the internal documentation for more details.
+
+<br/>
+
 # Usage
 
 ## Initialization
@@ -151,38 +183,6 @@ var HFHub := THuggingFaceFactory.CreateInstance(API_KEY, True);
 > So, set `HuggingFace := THuggingFaceFactory.CreateInstance(My_Key);` in the `OnCreate` event of your application.
 ><br>
 >Where `HuggingFace: IHuggingFace;`
-
-<br/>
-
-## Asynchronous callback mode management
-
-In the context of asynchronous methods, for a method that does not involve streaming, callbacks use the following generic record: `TAsynCallBack<T> = record` defined in the `HuggingFace.Async.Support.pas` unit. This record exposes the following properties:
-
-```Pascal
-   TAsynCallBack<T> = record
-   ... 
-       Sender: TObject;
-       OnStart: TProc<TObject>;
-       OnSuccess: TProc<TObject, T>;
-       OnError: TProc<TObject, string>; 
-```
-<br/>
-
-For methods requiring streaming, callbacks use the generic record `TAsynStreamCallBack<T> = record`, also defined in the `HuggingFace.Async.Support.pas` unit. This record exposes the following properties:
-
-```Pascal
-   TAsynCallBack<T> = record
-   ... 
-       Sender: TObject;
-       OnStart: TProc<TObject>;
-       OnSuccess: TProc<TObject>;
-       OnProgress: TProc<TObject, T>;
-       OnError: TProc<TObject, string>;
-       OnCancellation: TProc<TObject>;
-       OnDoCancel: TFunc<Boolean>;
-```
-
-The name of each property is self-explanatory; if needed, refer to the internal documentation for more details.
 
 <br/>
 
