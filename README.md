@@ -20,6 +20,7 @@ ___
 - [Usage](#usage)
     - [Initialization](#initialization)
     - [Asynchronous callback mode management](#Asynchronous-callback-mode-management)
+    - [Hugging Face Models Overview](#Hugging-Face-Models-Overview)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -157,6 +158,10 @@ For methods requiring streaming, callbacks use the generic record `TAsynStreamCa
 ```
 
 The name of each property is self-explanatory; if needed, refer to the internal documentation for more details.
+
+<br/>
+
+## Hugging Face Models Overview
 
 <br/>
 
