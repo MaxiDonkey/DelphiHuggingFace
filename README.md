@@ -25,6 +25,8 @@ ___
     - [Music-gen](#Music-gen)
     - [Image object detection](#Image-object-detection)
     - [Text To Sentiment analysis](#Text-To-Sentiment-analysis)
+    - [Audio classification](#Audio-classification)
+        - [Speech emotion recognition](#speech-emotion-recognition)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -375,6 +377,21 @@ Labels: 0 -> Negative; 1 -> Neutral; 2 -> Positive
 ```
 
 <br/>
+
+## Audio classification
+
+### Speech emotion recognition
+
+[Speech Emotion Recognition By Fine-Tuning Wav2Vec 2.0)(https://huggingface.co/ehcalabres/wav2vec2-lg-xlsr-en-speech-emotion-recognition)
+The model is a fine-tuned version of jonatasgrosman/wav2vec2-large-xlsr-53-english for a Speech Emotion Recognition (SER) task.
+
+The dataset used to fine-tune the original pre-trained model is the RAVDESS dataset. This dataset provides 1440 samples of recordings from actors performing on 8 different emotions in English, which are:
+
+```Text 
+  emotions = ['angry', 'calm', 'disgust', 'fearful', 'happy', 'neutral', 'sad', 'surprised']
+```
+
+<br>
 
 # Contributing
 
