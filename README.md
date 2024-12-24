@@ -871,8 +871,7 @@ For more details about the `Embeddings` task, check out its [dedicated page](htt
 
 <br/>
 
-[mixedbread-ai/mxbai-embed-large-v1](https://huggingface.co/mixedbread-ai/mxbai-embed-large-v1) <br/>
-Produce sentence embeddings.
+[mixedbread-ai/mxbai-embed-large-v1](https://huggingface.co/mixedbread-ai/mxbai-embed-large-v1) : Produce sentence embeddings.
 
 **Asynchronously code example**
 
