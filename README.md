@@ -543,6 +543,8 @@ Other models that you can easily test. It is up to you to choose the most suitab
 
 ## Zero-Shot classification
 
+[dedicated page](https://huggingface.co/tasks/zero-shot-classification)
+
 [facebook/bart-large-mnli](https://huggingface.co/facebook/bart-large-mnli) <br/>
 This is the checkpoint for bart-large after being trained on the MultiNLI (MNLI) dataset.
 
