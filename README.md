@@ -32,6 +32,7 @@ ___
     - [Image Segmentation](#Image-Segmentation)
     - [Zero-Shot classification](#Zero-Shot-classification)
     - [Token Classification](#Token-Classification)
+    - [Question Answering](#Question-Answering)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -612,6 +613,46 @@ See [associated paper](https://arxiv.org/abs/1911.02116)
       Params.Inputs('My name is Sarah Jessica Parker but you can call me Jessica');
     end,
     function : TAsynTokenClassification
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+
+<br/>
+
+## Question Answering
+
+[deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) <br/>
+This is the [roberta-base model](https://huggingface.co/FacebookAI/roberta-base), fine-tuned using the [SQuAD2.0 dataset](https://huggingface.co/datasets/rajpurkar/squad_v2). It's been trained on question-answer pairs, including unanswerable questions, for the task of Extractive Question Answering. <br/>
+See [associated paper](https://arxiv.org/abs/1907.11692)
+
+>[!NOTE]
+> In the field of `Question Answering`, over 12,683 pre-trained models are available. 
+>
+
+<br/>
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.WaitForModel := True;
+
+  HuggingFace.Text.QuestionAnswering(
+    procedure (Params: TQuestionAnsweringParam)
+    begin
+      Params.Model('deepset/roberta-base-squad2');
+      Params.Inputs('What is my name?', 'My name is Clara and I live in Berkeley.');
+      Params.Parameters(
+        procedure (var Params: TQuestionAnsweringParameters)
+        begin
+          Params.TopK(3);
+        end);
+    end,
+    function : TAsynQuestionAnswering
     begin
       Result.Sender := HFTutorial;
       Result.OnSuccess := Display;
