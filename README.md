@@ -587,7 +587,37 @@ Other models that you can easily test.
 
 ## Token Classification
 
+[FacebookAI/xlm-roberta-large-finetuned-conll03-english](https://huggingface.co/FacebookAI/xlm-roberta-large-finetuned-conll03-english) <br/>
+The model can be used for token classification, a natural language understanding task in which a label is assigned to some tokens in a text. <br/>
+See [associated paper](https://arxiv.org/abs/1911.02116)
 
+>[!NOTE]
+> In the field of `Zero-shot classification`, over 20,755 pre-trained models are available. 
+>
+
+<br/>
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.WaitForModel := True;
+
+  HuggingFace.Text.TokenClassification(
+    procedure (Params: TTokenClassificationParam)
+    begin
+      Params.Model('FacebookAI/xlm-roberta-large-finetuned-conll03-english');
+      //Params.Model('dslim/bert-base-NER');  //Can be used too
+      Params.Inputs('My name is Sarah Jessica Parker but you can call me Jessica');
+    end,
+    function : TAsynTokenClassification
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
 
 <br/>
 
