@@ -31,6 +31,7 @@ ___
     - [Image classification](#Image-classification)
     - [Image Segmentation](#Image-Segmentation)
     - [Zero-Shot classification](#Zero-Shot-classification)
+    - [Token Classification](#Token-Classification)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -581,6 +582,12 @@ Additional information about this model:
 Other models that you can easily test.
 - [valhalla/distilbart-mnli-12-9](https://huggingface.co/valhalla/distilbart-mnli-12-9)
 - [MoritzLaurer/mDeBERTa-v3-base-mnli-xnli](https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-mnli-xnli)
+
+<br/>
+
+## Token Classification
+
+
 
 <br/>
 
