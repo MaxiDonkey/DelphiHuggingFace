@@ -856,6 +856,44 @@ In the previous chapter, **Exploration Journey**, I walked through the unique fe
 
 ## Embeddings
 
+Feature extraction is the task of converting a text into a vector (often called “embedding”).
+
+**Example applications:**
+- Retrieving the most relevant documents for a query (for RAG applications).
+- Reranking a list of documents based on their similarity to a query.
+- Calculating the similarity between two sentences.
+
+For more details about the `Embeddings` task, check out its [dedicated page](https://huggingface.co/tasks/feature-extraction)! You will find examples and related materials.
+
+>[!NOTE]
+> In the field of Embeddingsover 7,400 pre-trained models are available. 
+>
+
+<br/>
+
+[mixedbread-ai/mxbai-embed-large-v1](https://huggingface.co/mixedbread-ai/mxbai-embed-large-v1) <br/>
+Produce sentence embeddings.
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.API.WaitForModel := True;
+
+  HuggingFace.Embeddings.Create(
+    procedure (Params: TEmbeddingParams)
+    begin
+      Params.Model('mixedbread-ai/mxbai-embed-large-v1');
+      Params.Inputs('Today is a sunny day and I will get some ice cream.');
+    end,
+    function : TAsynEmbeddings
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
 
 <br/>
 
