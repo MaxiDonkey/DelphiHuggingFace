@@ -34,6 +34,7 @@ ___
     - [Token Classification](#Token-Classification)
     - [Question Answering](#Question-Answering)
     - [Table Question Answering](#Table-Question-Answering)
+    - [Fill-mask](#Fill-mask)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -711,6 +712,41 @@ For more details about the `table-question-answering` task, check out its [dedic
         ]);
     end,
     function : TAsynTableQA
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+
+<br/>
+
+## Fill-mask
+
+For more details about the `fill-mask` task, check out its [dedicated page](https://huggingface.co/tasks/fill-mask)! You will find examples and related materials.
+
+>[!NOTE]
+> In the field of `Fill-mask`, over 13,570 pre-trained models are available. 
+>
+
+[google-bert/bert-base-uncased](https://huggingface.co/google-bert/bert-base-uncased) <br/>
+Pretrained model on English language using a masked language modeling (MLM) objective. It was introduced in [this paper](https://arxiv.org/abs/1810.04805) and first released in [this repository](https://github.com/google-research/bert). This model is uncased: it does not make a difference between english and English.
+
+<br/>
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.API.WaitForModel := True;
+
+  HuggingFace.Mask.Fill(
+    procedure (Params: TMaskParam)
+    begin
+      Params.Model('google-bert/bert-base-uncased');
+      Params.Inputs('The answer to the universe is [MASK].');
+      Params.Parameters(['infinite', 'big', 'amazing', 'no', '42']);
+    end,
+    function : TAsynMask
     begin
       Result.Sender := HFTutorial;
       Result.OnSuccess := Display;
