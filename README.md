@@ -354,6 +354,12 @@ The DETR model is an encoder-decoder transformer with a convolutional backbone.
 
 <br/>
 
+>[!NOTE]
+> In the field of `Object Detection`, over 2,913 pre-trained models are available. 
+>
+
+<br/>
+
 ## Text To Sentiment analysis
 
 This is a [RoBERTa-base model](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest) trained on ~124M tweets from January 2018 to December 2021, and finetuned for sentiment analysis with the TweetEval benchmark. 
@@ -389,6 +395,12 @@ Labels: 0 -> Negative; 1 -> Neutral; 2 -> Positive
 ## Audio classification
 
 For more details about the `audio-classification` task, check out its [dedicated page](https://huggingface.co/tasks/audio-classification)! You will find examples and related materials.
+
+<br/>
+
+>[!NOTE]
+> In the field of `Audio Classification`, over 2,859 pre-trained models are available. 
+>
 
 ### Speech emotion recognition
 
