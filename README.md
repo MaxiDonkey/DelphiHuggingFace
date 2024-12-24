@@ -464,12 +464,6 @@ This model is a fine-tuned version of facebook/wav2vec2-xls-r-300m on Librispeec
 
 <br/>
 
->[!NOTE]
-> In the field of `audio classification`, over 2,800 pre-trained models are available, catering to a diverse array of ARL tasks such as speech recognition, music classification, and acoustic event detection. These models provide robust tools for feature extraction and can be fine-tuned with task-specific datasets to optimize performance for downstream applications.
->
-
-<br/>
-
 ## Image classification
 
 For more details about the `image-classification` task, check out its [dedicated page](https://huggingface.co/tasks/image-classification)! You will find examples and related materials.
