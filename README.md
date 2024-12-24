@@ -173,7 +173,7 @@ The name of each property is self-explanatory; if needed, refer to the internal 
 
 # Exploration Journey
 
-This part of this document is designed to reflect the path I took while uncovering the features and possibilities of `Hugging Face Hub APIs`. Rather than presenting a rigid tutorial, I chose to structure it as an 'Exploration Journey' to capture the iterative, curious, and hands-on process of discovery. Each step builds on the previous one, showcasing not only what I found but how I approached and learned from the API ecosystem."
+This part of this document is designed to reflect the path I took while uncovering the features and possibilities of `Hugging Face Hub APIs`. Rather than presenting a rigid tutorial, I chose to structure it as an **Exploration Journey** to capture the iterative, curious, and hands-on process of discovery. Each step builds on the previous one, showcasing not only what I found but how I approached and learned from the API ecosystem."
 
 
 ## Initialization
@@ -839,7 +839,7 @@ BART is a transformer encoder-encoder (seq2seq) model with a bidirectional (BERT
 
 # Common Ground - Functionalities Across API Ecosystems
 
-In the previous chapter, Exploration Journey, I walked through the unique features of `Hugging Face Hub APIs`, focusing on what makes them stand out. As I kept exploring, I noticed some strong overlaps with other platforms like `OpenAI`, `Anthropic`, and `Gemini`. That’s where Common Ground comes in. This chapter is about zooming out to look at those shared functionalities and seeing how these ecosystems stack up against each other. By focusing on what they have in common, we can get a clearer picture of the API landscape as a whole."
+In the previous chapter, **Exploration Journey**, I walked through the unique features of `Hugging Face Hub APIs`, focusing on what makes them stand out. As I kept exploring, I noticed some strong overlaps with other platforms like `OpenAI`, `Anthropic`, and `Gemini`. That’s where Common Ground comes in. This chapter is about zooming out to look at those shared functionalities and seeing how these ecosystems stack up against each other. By focusing on what they have in common, we can get a clearer picture of the API landscape as a whole.
 
 
 <br/>
