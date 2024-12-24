@@ -29,6 +29,7 @@ ___
         - [Speech emotion recognition](#speech-emotion-recognition)
         - [Gender recognition](#Gender-recognition)
     - [Image classification](#Image-classification)
+    - [Image Segmentation](#Image Segmentation)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -208,7 +209,7 @@ Using **Delphi**, this list can also be retrieved programmatically. To support f
 ```Pascal
 // uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
 
-  var Models := HF.Hub.FetchModels(HFTutorial.UrlNext,
+  var Models := HFHub.Hub.FetchModels(HFTutorial.UrlNext,
     procedure (Params: TFetchParams)
     begin
       Params.Limit(50);
@@ -231,7 +232,7 @@ The `HFTutorial.UrlNext` variable will store the URL of the next page. By re-exe
 ```Pascal
 // uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
 
-  HF.Hub.FetchModels(HFTutorial.UrlNext,
+  HFHub.Hub.FetchModels(HFTutorial.UrlNext,
     procedure (Params: TFetchParams)
     begin
       Params.Limit(50);
@@ -489,6 +490,10 @@ Vision Transformer (ViT) model pre-trained on ImageNet-21k (14 million images, 2
 >[!NOTE]
 > In the field of `image classification`, over 15,000 pre-trained models are available
 >
+
+<br/>
+
+## Image Segmentation
 
 <br/>
 
