@@ -38,6 +38,7 @@ ___
     - [Text Classification](#Text-Classification)
     - [Summarization](#Summarization)
 - [Common Ground - Functionalities Across API Ecosystems](#Common-Ground-Functionalities-Across-API-Ecosystems)
+    - [Embeddings](#Embeddings)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -696,6 +697,9 @@ For more details about the `table-question-answering` task, check out its [dedic
 [google/tapas-base-finetuned-wtq](https://huggingface.co/google/tapas-base-finetuned-wtq) <br/>
 [TAPAS](https://github.com/google-research/tapas) is a BERT-like transformers model pretrained on a large corpus of English data from Wikipedia in a self-supervised fashion. This means it was pretrained on the raw tables and associated texts only, with no humans labelling them in any way (which is why it can use lots of publicly available data) with an automatic process to generate inputs and labels from those texts. 
 
+
+**Asynchronously code example**
+
 ```Pascal
 // uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
 
@@ -740,6 +744,9 @@ Pretrained model on English language using a masked language modeling (MLM) obje
 
 <br/>
 
+
+**Asynchronously code example**
+
 ```Pascal
 // uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
 
@@ -775,6 +782,8 @@ For more details about the `text-classification` task, check out its [dedicated 
 [distilbert/distilbert-base-uncased-finetuned-sst-2-english](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english) <br/>
 This model is a fine-tune checkpoint of DistilBERT-base-uncased, fine-tuned on SST-2. This model reaches an accuracy of 91.3 on the dev set (for comparison, Bert bert-base-uncased version reaches an accuracy of 92.7). <br/>
 For more details about DistilBERT, we encourage to check out this [model card](https://huggingface.co/distilbert/distilbert-base-uncased).
+
+**Asynchronously code example**
 
 ```Pascal
 // uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
@@ -816,6 +825,8 @@ For more details about the `summarization` task, check out its [dedicated page](
 [facebook/bart-large-cnn](https://huggingface.co/facebook/bart-large-cnn) <br/>
 BART is a transformer encoder-encoder (seq2seq) model with a bidirectional (BERT-like) encoder and an autoregressive (GPT-like) decoder. BART is pre-trained by (1) corrupting text with an arbitrary noising function, and (2) learning a model to reconstruct the original text.
 
+**Asynchronously code example**
+
 ```Pascal
 // uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
 
@@ -840,6 +851,10 @@ BART is a transformer encoder-encoder (seq2seq) model with a bidirectional (BERT
 # Common Ground - Functionalities Across API Ecosystems
 
 In the previous chapter, **Exploration Journey**, I walked through the unique features of `Hugging Face Hub APIs`, focusing on what makes them stand out. As I kept exploring, I noticed some strong overlaps with other platforms like `OpenAI`, `Anthropic`, and `Gemini`. That’s where Common Ground comes in. This chapter is about zooming out to look at those shared functionalities and seeing how these ecosystems stack up against each other. By focusing on what they have in common, we can get a clearer picture of the API landscape as a whole.
+
+<br/>
+
+## Embeddings
 
 
 <br/>
