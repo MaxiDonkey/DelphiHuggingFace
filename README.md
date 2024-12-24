@@ -759,7 +759,7 @@ Pretrained model on English language using a masked language modeling (MLM) obje
 
 ## Text Classification
 
-For more details about the `text-classification` task, check out its [dedicated page](https://huggingface.co/docs/api-inference/tasks/text-classification)! You will find examples and related materials.
+For more details about the `text-classification` task, check out its [dedicated page](https://huggingface.co/tasks/text-classification)! You will find examples and related materials.
 
 >[!NOTE]
 > In the field of `Text Classification`, over 77,280 pre-trained models are available. 
