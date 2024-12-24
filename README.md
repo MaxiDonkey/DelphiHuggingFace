@@ -543,7 +543,7 @@ Other models that you can easily test. It is up to you to choose the most suitab
 
 ## Zero-Shot classification
 
-[dedicated page](https://huggingface.co/tasks/zero-shot-classification)
+For more details about the `zero-shot-classification` task, check out its [dedicated page](https://huggingface.co/tasks/zero-shot-classification)! You will find examples and related materials.
 
 [facebook/bart-large-mnli](https://huggingface.co/facebook/bart-large-mnli) <br/>
 This is the checkpoint for bart-large after being trained on the MultiNLI (MNLI) dataset.
@@ -590,6 +590,8 @@ Other models that you can easily test.
 
 ## Token Classification
 
+For more details about the `token-classification` task, check out its [dedicated page](https://huggingface.co/tasks/token-classification)! You will find examples and related materials.
+
 [FacebookAI/xlm-roberta-large-finetuned-conll03-english](https://huggingface.co/FacebookAI/xlm-roberta-large-finetuned-conll03-english) <br/>
 The model can be used for token classification, a natural language understanding task in which a label is assigned to some tokens in a text. <br/>
 See [associated paper](https://arxiv.org/abs/1911.02116)
@@ -625,6 +627,8 @@ See [associated paper](https://arxiv.org/abs/1911.02116)
 <br/>
 
 ## Question Answering
+
+For more details about the `question-answering` task, check out its [dedicated page](https://huggingface.co/tasks/question-answering)! You will find examples and related materials.
 
 [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) <br/>
 This is the [roberta-base model](https://huggingface.co/FacebookAI/roberta-base), fine-tuned using the [SQuAD2.0 dataset](https://huggingface.co/datasets/rajpurkar/squad_v2). It's been trained on question-answer pairs, including unanswerable questions, for the task of Extractive Question Answering. <br/>
