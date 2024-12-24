@@ -466,6 +466,10 @@ This model is a fine-tuned version of facebook/wav2vec2-xls-r-300m on Librispeec
 
 For more details about the `image-classification` task, check out its [dedicated page](https://huggingface.co/tasks/image-classification)! You will find examples and related materials.
 
+>[!NOTE]
+> In the field of `image classification`, over 15,000 pre-trained models are available.
+>
+
 [ResNet-50 v1.5](https://huggingface.co/microsoft/resnet-50)
 ResNet model pre-trained on ImageNet-1k at resolution 224x224. It was introduced in the paper Deep Residual Learning for Image Recognition by He et al.
 
@@ -500,15 +504,13 @@ Vision Transformer (ViT) model pre-trained on ImageNet-21k (14 million images, 2
 
 <br/>
 
->[!NOTE]
-> In the field of `image classification`, over 15,000 pre-trained models are available.
->
-
-<br/>
-
 ## Image Segmentation
 
 For more details about the `image-segmentation` task, check out its [dedicated page](https://huggingface.co/tasks/image-segmentation)! You will find examples and related materials.
+
+>[!NOTE]
+> In the field of `image segmentation`, over 1,093 pre-trained models are available. Each model is distinguished by specific skills.
+>
 
 [openmmlab/upernet-convnext-small](https://huggingface.co/openmmlab/upernet-convnext-small) <br/>
 UperNet framework for semantic segmentation, leveraging a ConvNeXt backbone. UperNet was introduced in the paper [Unified Perceptual Parsing for Scene Understanding](https://arxiv.org/abs/1807.10221) by Xiao et al.
@@ -538,11 +540,6 @@ UperNet framework for semantic segmentation, leveraging a ConvNeXt backbone. Upe
 
 ![Image segmentation](/../main/images/ImageSegmentation.png?raw=true "Image segmentation")
 
-
->[!NOTE]
-> In the field of `image segmentation`, over 1,093 pre-trained models are available. Each model is distinguished by specific skills.
->
-
 <br/>
 
 Other models that you can easily test. It is up to you to choose the most suitable image:
@@ -556,6 +553,10 @@ Other models that you can easily test. It is up to you to choose the most suitab
 ## Zero-Shot classification
 
 For more details about the `zero-shot-classification` task, check out its [dedicated page](https://huggingface.co/tasks/zero-shot-classification)! You will find examples and related materials.
+
+>[!NOTE]
+> In the field of `Zero-shot classification`, over 337 pre-trained models are available. 
+>
 
 [facebook/bart-large-mnli](https://huggingface.co/facebook/bart-large-mnli) <br/>
 This is the checkpoint for bart-large after being trained on the MultiNLI (MNLI) dataset.
@@ -590,10 +591,6 @@ Additional information about this model:
     end);
 ```
 
->[!NOTE]
-> In the field of `Zero-shot classification`, over 337 pre-trained models are available. 
->
-
 Other models that you can easily test.
 - [valhalla/distilbart-mnli-12-9](https://huggingface.co/valhalla/distilbart-mnli-12-9)
 - [MoritzLaurer/mDeBERTa-v3-base-mnli-xnli](https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-mnli-xnli)
@@ -604,15 +601,13 @@ Other models that you can easily test.
 
 For more details about the `token-classification` task, check out its [dedicated page](https://huggingface.co/tasks/token-classification)! You will find examples and related materials.
 
-[FacebookAI/xlm-roberta-large-finetuned-conll03-english](https://huggingface.co/FacebookAI/xlm-roberta-large-finetuned-conll03-english) <br/>
-The model can be used for token classification, a natural language understanding task in which a label is assigned to some tokens in a text. <br/>
-See [associated paper](https://arxiv.org/abs/1911.02116)
-
 >[!NOTE]
 > In the field of `Zero-shot classification`, over 20,755 pre-trained models are available. 
 >
 
-<br/>
+[FacebookAI/xlm-roberta-large-finetuned-conll03-english](https://huggingface.co/FacebookAI/xlm-roberta-large-finetuned-conll03-english) <br/>
+The model can be used for token classification, a natural language understanding task in which a label is assigned to some tokens in a text. <br/>
+See [associated paper](https://arxiv.org/abs/1911.02116)
 
 **Asynchronously code example**
 
@@ -642,13 +637,13 @@ See [associated paper](https://arxiv.org/abs/1911.02116)
 
 For more details about the `question-answering` task, check out its [dedicated page](https://huggingface.co/tasks/question-answering)! You will find examples and related materials.
 
-[deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) <br/>
-This is the [roberta-base model](https://huggingface.co/FacebookAI/roberta-base), fine-tuned using the [SQuAD2.0 dataset](https://huggingface.co/datasets/rajpurkar/squad_v2). It's been trained on question-answer pairs, including unanswerable questions, for the task of Extractive Question Answering. <br/>
-See [associated paper](https://arxiv.org/abs/1907.11692)
-
 >[!NOTE]
 > In the field of `Question Answering`, over 12,683 pre-trained models are available. 
 >
+
+[deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) <br/>
+This is the [roberta-base model](https://huggingface.co/FacebookAI/roberta-base), fine-tuned using the [SQuAD2.0 dataset](https://huggingface.co/datasets/rajpurkar/squad_v2). It's been trained on question-answer pairs, including unanswerable questions, for the task of Extractive Question Answering. <br/>
+See [associated paper](https://arxiv.org/abs/1907.11692)
 
 <br/>
 
