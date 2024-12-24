@@ -322,6 +322,8 @@ Refer to [official documentation](https://huggingface.co/docs/api-inference/para
 
 ## Image object detection
 
+For more details about the `object-detection` task, check out its [dedicated page](https://huggingface.co/tasks/object-detection)! You will find examples and related materials.
+
 [DEtection TRansformer (DETR) model](https://huggingface.co/facebook/detr-resnet-50) trained end-to-end on COCO 2017 object detection (118k annotated images).
 The DETR model is an encoder-decoder transformer with a convolutional backbone.
 
@@ -385,6 +387,8 @@ Labels: 0 -> Negative; 1 -> Neutral; 2 -> Positive
 <br/>
 
 ## Audio classification
+
+For more details about the `audio-classification` task, check out its [dedicated page](https://huggingface.co/tasks/audio-classification)! You will find examples and related materials.
 
 ### Speech emotion recognition
 
@@ -456,6 +460,8 @@ This model is a fine-tuned version of facebook/wav2vec2-xls-r-300m on Librispeec
 
 ## Image classification
 
+For more details about the `image-classification` task, check out its [dedicated page](https://huggingface.co/tasks/image-classification)! You will find examples and related materials.
+
 [ResNet-50 v1.5](https://huggingface.co/microsoft/resnet-50)
 ResNet model pre-trained on ImageNet-1k at resolution 224x224. It was introduced in the paper Deep Residual Learning for Image Recognition by He et al.
 
@@ -497,6 +503,8 @@ Vision Transformer (ViT) model pre-trained on ImageNet-21k (14 million images, 2
 <br/>
 
 ## Image Segmentation
+
+For more details about the `image-segmentation` task, check out its [dedicated page](https://huggingface.co/tasks/image-segmentation)! You will find examples and related materials.
 
 [openmmlab/upernet-convnext-small](https://huggingface.co/openmmlab/upernet-convnext-small) <br/>
 UperNet framework for semantic segmentation, leveraging a ConvNeXt backbone. UperNet was introduced in the paper [Unified Perceptual Parsing for Scene Understanding](https://arxiv.org/abs/1807.10221) by Xiao et al.
