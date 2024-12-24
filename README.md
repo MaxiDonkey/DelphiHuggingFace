@@ -33,6 +33,7 @@ ___
     - [Zero-Shot classification](#Zero-Shot-classification)
     - [Token Classification](#Token-Classification)
     - [Question Answering](#Question-Answering)
+    - [Table Question Answering](#Table-Question-Answering)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -292,7 +293,7 @@ Refer to [official documentation](https://huggingface.co/docs/api-inference/para
 
 ## Music-gen
 
-[MusicGen](https://huggingface.co/facebook/musicgen-small) is a text-to-music model capable of genreating high-quality music samples conditioned on text descriptions or audio prompts.
+[MusicGen](https://huggingface.co/facebook/musicgen-small) is a text-to-music model capable of generating high-quality music samples conditioned on text descriptions or audio prompts.
 
 **Asynchronously code example**
 
@@ -666,6 +667,50 @@ See [associated paper](https://arxiv.org/abs/1907.11692)
         end);
     end,
     function : TAsynQuestionAnswering
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+
+<br/>
+
+## Table Question Answering
+
+For more details about the `table-question-answering` task, check out its [dedicated page](https://huggingface.co/tasks/table-question-answering)! You will find examples and related materials.
+
+>[!NOTE]
+> In the field of `Table Question Answering`, over 133 pre-trained models are available. 
+>
+
+<br/>
+
+[google/tapas-base-finetuned-wtq](https://huggingface.co/google/tapas-base-finetuned-wtq) <br/>
+[TAPAS](https://github.com/google-research/tapas) is a BERT-like transformers model pretrained on a large corpus of English data from Wikipedia in a self-supervised fashion. This means it was pretrained on the raw tables and associated texts only, with no humans labelling them in any way (which is why it can use lots of publicly available data) with an automatic process to generate inputs and labels from those texts. 
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.WaitForModel := True;
+
+  HuggingFace.Text.TableQuestionAnswering(
+    procedure (Params: TTableQAParam)
+    begin
+      Params.Model('google/tapas-base-finetuned-wtq');
+      Params.Inputs(
+        'How many stars does the tokenizers repository have?',
+        [ TRow.Create('Repository', ['Transformers', 'Datasets', 'Tokenizers']),
+          TRow.Create('Stars', ['36542', '4512', '3934']),
+          TRow.Create('Contributors', ['651', '77', '34']),
+          TRow.Create('Programming language',
+             [ 'Python',
+               'Python',
+               'Rust, Python and NodeJS'
+             ])
+        ]);
+    end,
+    function : TAsynTableQA
     begin
       Result.Sender := HFTutorial;
       Result.OnSuccess := Display;
