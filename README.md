@@ -39,6 +39,7 @@ ___
     - [Summarization](#Summarization)
 - [Common Ground Functionalities Across API Ecosystems](#Common-Ground-Functionalities-Across-API-Ecosystems)
     - [Embeddings](#Embeddings)
+    - [Chat](#Chat)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -893,6 +894,24 @@ For more details about the `Embeddings` task, check out its [dedicated page](htt
       Result.OnError := Display;
     end);
 ```
+
+<br/>
+
+## Chat
+
+Generate responses in a conversational context using a list of messages as input. This capability supports both conversational Language Models (LLMs) and Vision-Language Models (VLMs), bridging text-based and image-to-text functionalities. It is a specialized subtask within text generation and image-text-to-text processing.
+
+Recommended Models :
+
+Conversational Large Language Models (LLMs)
+- [google/gemma-2-2b-it](https://huggingface.co/google/gemma-2-2b-it): A robust text-generation model optimized for instruction following.
+- [meta-llama/Meta-Llama-3.1-8B-Instruct](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct): A highly capable model for generating text and adhering to instructions.
+- [microsoft/Phi-3-mini-4k-instruct](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct): A compact yet efficient text-generation model.
+- [Qwen/Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct): A reliable model for text generation and instruction compliance.
+
+Conversational Vision-Language Models (VLMs)
+- [meta-llama/Llama-3.2-11B-Vision-Instruct](https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct): A powerful vision-language model with excellent capabilities in visual comprehension and reasoning.
+- [Qwen/Qwen2-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct): A strong model designed for image-text-to-text tasks.
 
 <br/>
 
