@@ -37,7 +37,7 @@ ___
     - [Fill-mask](#Fill-mask)
     - [Text Classification](#Text-Classification)
     - [Summarization](#Summarization)
-- [Common Ground - Functionalities Across API Ecosystems](#Common-Ground-Functionalities-Across-API-Ecosystems)
+- [Common Ground Functionalities Across API Ecosystems](#Common-Ground-Functionalities-Across-API-Ecosystems)
     - [Embeddings](#Embeddings)
 - [Contributing](#contributing)
 - [License](#license)
@@ -848,7 +848,7 @@ BART is a transformer encoder-encoder (seq2seq) model with a bidirectional (BERT
 
 <br/>
 
-# Common Ground - Functionalities Across API Ecosystems
+# Common Ground Functionalities Across API Ecosystems
 
 In the previous chapter, **Exploration Journey**, I walked through the unique features of `Hugging Face Hub APIs`, focusing on what makes them stand out. As I kept exploring, I noticed some strong overlaps with other platforms like `OpenAI`, `Anthropic`, and `Gemini`. That’s where Common Ground comes in. This chapter is about zooming out to look at those shared functionalities and seeing how these ecosystems stack up against each other. By focusing on what they have in common, we can get a clearer picture of the API landscape as a whole.
 
