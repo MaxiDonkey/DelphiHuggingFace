@@ -531,7 +531,7 @@ UperNet framework for semantic segmentation, leveraging a ConvNeXt backbone. Upe
 
 <br/>
 
-Other models that you can easily test are available. It is up to you to choose the most suitable image:
+Other models that you can easily test. It is up to you to choose the most suitable image:
 - [jonathandinu/face-parsing](https://huggingface.co/jonathandinu/face-parsing)
 - [nvidia/segformer-b1-finetuned-cityscapes-1024-1024](https://huggingface.co/nvidia/segformer-b1-finetuned-cityscapes-1024-1024)
 - [google/deeplabv3_mobilenet_v2_1.0_513](https://huggingface.co/google/deeplabv3_mobilenet_v2_1.0_513)
@@ -541,7 +541,46 @@ Other models that you can easily test are available. It is up to you to choose t
 
 ## Zero-Shot classification
 
+[facebook/bart-large-mnli](https://huggingface.co/facebook/bart-large-mnli) <br/>
+This is the checkpoint for bart-large after being trained on the MultiNLI (MNLI) dataset.
 
+Additional information about this model:
+- The [bart-large](https://huggingface.co/facebook/bart-large) model page
+- BART: [Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension](https://arxiv.org/abs/1910.13461)
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.WaitForModel := True;
+
+  HuggingFace.Text.ZeroShotClassification(
+    procedure (Params: TZeroShotClassificationParam)
+    begin
+      Params.Model('facebook/bart-large-mnli');
+      Params.Inputs('Hi, I recently bought a device from your company but it is not working as advertised and I would like to get reimbursed!');
+      Params.Parameters(
+        procedure (var Params: TZeroShotClassificationParameters)
+        begin
+          Params.CandidateLabels(['refund', 'legal', 'faq'])
+        end);
+    end,
+    function : TAsynZeroShotClassification
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+
+>[!NOTE]
+> In the field of `Zero-shot classification`, over 337 pre-trained models are available. 
+>
+
+Other models that you can easily test.
+- [valhalla/distilbart-mnli-12-9](https://huggingface.co/valhalla/distilbart-mnli-12-9)
+- [MoritzLaurer/mDeBERTa-v3-base-mnli-xnli](https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-mnli-xnli)
 
 <br/>
 
