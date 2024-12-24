@@ -899,7 +899,7 @@ For more details about the `Embeddings` task, check out its [dedicated page](htt
 
 ## Chat
 
-Generate responses in a conversational context using a list of messages as input. This capability supports both conversational Language Models (LLMs) and Vision-Language Models (VLMs), bridging text-based and `image-to-text` functionalities. It is a specialized subtask within [`text generation`](https://huggingface.co/docs/api-inference/tasks/text-generation) and `image-text-to-text` processing.
+Generate responses in a conversational context using a list of messages as input. This capability supports both conversational Language Models (LLMs) and Vision-Language Models (VLMs), bridging text-based and `image-to-text` functionalities. It is a specialized subtask within [`text generation`](https://huggingface.co/docs/api-inference/tasks/text-generation) and [`image-text-to-text`](https://huggingface.co/docs/api-inference/tasks/image-text-to-text) processing.
 
 Recommended Models :
 
