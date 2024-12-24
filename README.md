@@ -324,6 +324,10 @@ Refer to [official documentation](https://huggingface.co/docs/api-inference/para
 
 For more details about the `object-detection` task, check out its [dedicated page](https://huggingface.co/tasks/object-detection)! You will find examples and related materials.
 
+>[!NOTE]
+> In the field of `Object Detection`, over 2,913 pre-trained models are available. 
+>
+
 [DEtection TRansformer (DETR) model](https://huggingface.co/facebook/detr-resnet-50) trained end-to-end on COCO 2017 object detection (118k annotated images).
 The DETR model is an encoder-decoder transformer with a convolutional backbone.
 
@@ -351,12 +355,6 @@ The DETR model is an encoder-decoder transformer with a convolutional backbone.
 ```
 
 ![Object detection](/../main/images/ObjectDetection.png?raw=true "Object detection")
-
-<br/>
-
->[!NOTE]
-> In the field of `Object Detection`, over 2,913 pre-trained models are available. 
->
 
 <br/>
 
