@@ -791,7 +791,8 @@ For more details about DistilBERT, we encourage to check out this [model card](h
 ```
 This code example returns positive or negative depending on the meaning of the prompt.
 
-Use the model : [papluca/xlm-roberta-base-language-detection](https://huggingface.co/papluca/xlm-roberta-base-language-detection) as a language detector.
+- Use the model : [papluca/xlm-roberta-base-language-detection](https://huggingface.co/papluca/xlm-roberta-base-language-detection) as a language detector.
+- Use the model: [cardiffnlp/twitter-roberta-base-sentiment-latest](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest) for sentiment analysis.
 
 <br/>
 
