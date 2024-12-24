@@ -488,15 +488,53 @@ Vision Transformer (ViT) model pre-trained on ImageNet-21k (14 million images, 2
 <br/>
 
 >[!NOTE]
-> In the field of `image classification`, over 15,000 pre-trained models are available
+> In the field of `image classification`, over 15,000 pre-trained models are available.
 >
 
 <br/>
 
 ## Image Segmentation
 
+[openmmlab/upernet-convnext-small](https://huggingface.co/openmmlab/upernet-convnext-small) <br/>
+UperNet framework for semantic segmentation, leveraging a ConvNeXt backbone. UperNet was introduced in the paper [Unified Perceptual Parsing for Scene Understanding](https://arxiv.org/abs/1807.10221) by Xiao et al.
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  var ImageFilePath := 'images\tiger.jpg';
+  HFTutorial.LoadImageFromFile(ImageFilePath);
+  HuggingFace.WaitForModel := True;
+
+  HuggingFace.Image.Segmentation(
+    procedure (Params: TImageSegmentationParam)
+    begin
+      Params.Model('openmmlab/upernet-convnext-small');
+      Params.Inputs(ImageFilePath);
+    end,
+    function : TAsynImageSegmentation
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+
 ![Image segmentation](/../main/images/ImageSegmentation.png?raw=true "Image segmentation")
 
+
+>[!NOTE]
+> In the field of `image segmentation`, over 1,093 pre-trained models are available. Each model is distinguished by specific skills.
+>
+
+<br/>
+
+Other models that you can easily test are available. It is up to you to choose the most suitable image:
+- [jonathandinu/face-parsing](https://huggingface.co/jonathandinu/face-parsing)
+- [nvidia/segformer-b1-finetuned-cityscapes-1024-1024](https://huggingface.co/nvidia/segformer-b1-finetuned-cityscapes-1024-1024)
+- [google/deeplabv3_mobilenet_v2_1.0_513](https://huggingface.co/google/deeplabv3_mobilenet_v2_1.0_513)
+- [facebook/mask2former-swin-large-cityscapes-semantic](https://huggingface.co/facebook/mask2former-swin-large-cityscapes-semantic)
 
 <br/>
 
