@@ -18,7 +18,7 @@ ___
 - [Remarks](#remarks)
 - [Tools for simplifying this tutorial](#Tools-for-simplifying-this-tutorial)
 - [Asynchronous callback mode management](#Asynchronous-callback-mode-management)
-- [Usage](#usage)
+- [Exploration Journey](#Exploration-Journey)
     - [Initialization](#initialization)
     - [Hugging Face Models Overview](#Hugging-Face-Models-Overview)
         - [Model inference WARM COLD](#Model-inference-WARM-COLD)
@@ -170,7 +170,10 @@ The name of each property is self-explanatory; if needed, refer to the internal 
 
 <br/>
 
-# Usage
+# Exploration Journey
+
+This part of this document is designed to reflect the path I took while uncovering the features and possibilities of `Hugging Face Hub APIs`. Rather than presenting a rigid tutorial, I chose to structure it as an 'Exploration Journey' to capture the iterative, curious, and hands-on process of discovery. Each step builds on the previous one, showcasing not only what I found but how I approached and learned from the API ecosystem."
+
 
 ## Initialization
 
