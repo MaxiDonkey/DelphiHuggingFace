@@ -345,7 +345,7 @@ The DETR model is an encoder-decoder transformer with a convolutional backbone.
     end);
 ```
 
-![Alt text](/../main/images/ObjectDetection.png?raw=true "Object detection")
+![Object detection](/../main/images/ObjectDetection.png?raw=true "Object detection")
 
 <br/>
 
@@ -494,6 +494,9 @@ Vision Transformer (ViT) model pre-trained on ImageNet-21k (14 million images, 2
 <br/>
 
 ## Image Segmentation
+
+![Image segmentation](/../main/images/ImageSegmentation.png?raw=true "Image segmentation")
+
 
 <br/>
 
