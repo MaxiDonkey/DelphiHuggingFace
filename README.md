@@ -36,6 +36,7 @@ ___
     - [Table Question Answering](#Table-Question-Answering)
     - [Fill-mask](#Fill-mask)
     - [Text Classification](#Text-Classification)
+    - [Summarization](#Summarization)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -793,6 +794,42 @@ This code example returns positive or negative depending on the meaning of the p
 
 - Use the model : [papluca/xlm-roberta-base-language-detection](https://huggingface.co/papluca/xlm-roberta-base-language-detection) as a language detector.
 - Use the model: [cardiffnlp/twitter-roberta-base-sentiment-latest](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest) for sentiment analysis.
+
+<br/>
+
+## Summarization
+
+Summarization is the task of producing a shorter version of a document while preserving its important information. Some models can extract text from the original input, while other models can generate entirely new text.
+
+For more details about the `summarization` task, check out its [dedicated page](https://huggingface.co/tasks/summarization)! You will find examples and related materials.
+
+>[!NOTE]
+> In the field of `Summarization`, over 2,130 pre-trained models are available. 
+>
+
+<br/>
+
+[facebook/bart-large-cnn](https://huggingface.co/facebook/bart-large-cnn) <br/>
+BART is a transformer encoder-encoder (seq2seq) model with a bidirectional (BERT-like) encoder and an autoregressive (GPT-like) decoder. BART is pre-trained by (1) corrupting text with an arbitrary noising function, and (2) learning a model to reconstruct the original text.
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.WaitForModel := True;
+
+  HuggingFace.Text.Summarization(
+    procedure (Params: TSummarizationParam)
+    begin
+      Params.Model('facebook/bart-large-cnn');
+      Params.Inputs('The tower is 324 metres (1,063 ft) tall, about the same height as an 81-storey building, and the tallest structure in Paris. Its base is square, measuring 125 metres (410 ft) on each side. During its construction, the Eiffel Tower surpassed the Washington Monument to become the tallest man-made structure in the world, a title it held for 41 years until the Chrysler Building in New York City was finished in 1930. It was the first structure to reach a height of 300 metres. Due to the addition of a broadcasting aerial at the top of the tower in 1957, it is now taller than the Chrysler Building by 5.2 metres (17 ft). Excluding transmitters, the Eiffel Tower is the second tallest free-standing structure in France after the Millau Viaduct.');
+    end,
+    function : TAsynSummarization
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
 
 <br/>
 
