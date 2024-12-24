@@ -35,6 +35,7 @@ ___
     - [Question Answering](#Question-Answering)
     - [Table Question Answering](#Table-Question-Answering)
     - [Fill-mask](#Fill-mask)
+    - [Text Classification](#Text-Classification)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -753,6 +754,44 @@ Pretrained model on English language using a masked language modeling (MLM) obje
       Result.OnError := Display;
     end);
 ```
+
+<br/>
+
+## Text Classification
+
+For more details about the `text-classification` task, check out its [dedicated page](https://huggingface.co/docs/api-inference/tasks/text-classification)! You will find examples and related materials.
+
+>[!NOTE]
+> In the field of `Text Classification`, over 77,280 pre-trained models are available. 
+>
+
+<br/>
+
+[distilbert/distilbert-base-uncased-finetuned-sst-2-english](https://huggingface.co/distilbert/distilbert-base-uncased-finetuned-sst-2-english) <br/>
+This model is a fine-tune checkpoint of DistilBERT-base-uncased, fine-tuned on SST-2. This model reaches an accuracy of 91.3 on the dev set (for comparison, Bert bert-base-uncased version reaches an accuracy of 92.7). <br/>
+For more details about DistilBERT, we encourage to check out this [model card](https://huggingface.co/distilbert/distilbert-base-uncased).
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.WaitForModel := True;
+
+  HuggingFace.Text.TextClassification(
+    procedure (Params: TTextClassificationParam)
+    begin
+      Params.Model('distilbert/distilbert-base-uncased-finetuned-sst-2-english');
+      Params.Inputs('I like you. I love you.');
+    end,
+    function : TAsynTextClassification
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+This code example returns positive or negative depending on the meaning of the prompt.
+
+Use the model : [papluca/xlm-roberta-base-language-detection](https://huggingface.co/papluca/xlm-roberta-base-language-detection) as a language detector.
 
 <br/>
 
