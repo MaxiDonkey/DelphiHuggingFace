@@ -30,6 +30,7 @@ ___
         - [Gender recognition](#Gender-recognition)
     - [Image classification](#Image-classification)
     - [Image Segmentation](#Image-Segmentation)
+    - [Zero-Shot classification](#Zero-Shot-classification)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -535,6 +536,12 @@ Other models that you can easily test are available. It is up to you to choose t
 - [nvidia/segformer-b1-finetuned-cityscapes-1024-1024](https://huggingface.co/nvidia/segformer-b1-finetuned-cityscapes-1024-1024)
 - [google/deeplabv3_mobilenet_v2_1.0_513](https://huggingface.co/google/deeplabv3_mobilenet_v2_1.0_513)
 - [facebook/mask2former-swin-large-cityscapes-semantic](https://huggingface.co/facebook/mask2former-swin-large-cityscapes-semantic)
+
+<br/>
+
+## Zero-Shot classification
+
+
 
 <br/>
 
