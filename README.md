@@ -29,7 +29,7 @@ ___
         - [Speech emotion recognition](#speech-emotion-recognition)
         - [Gender recognition](#Gender-recognition)
     - [Image classification](#Image-classification)
-    - [Image Segmentation](#Image Segmentation)
+    - [Image Segmentation](#Image-Segmentation)
 - [Contributing](#contributing)
 - [License](#license)
  
