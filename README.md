@@ -47,6 +47,7 @@ ___
     - [Text Generation](#Text-Generation)
     - [Translation](#Translation)
     - [Image Generation](#Image-Generation)
+    - [Text-to-Speech](#Text-to-Speech)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -1392,6 +1393,41 @@ For more details about the `text-to-image` task, check out its [dedicated page](
       Params.Inputs('A quarter dollar coin placed on a wooden floor in a close-up view');
     end,
     function : TAsynTextToImage
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnStart := Start;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+
+<br/>
+
+## Text-to-Speech
+
+Convert a text to an audio speech.
+
+>[!NOTE]
+> In the field of `text-to-speech` over 2,273 pre-trained models are available. 
+>
+
+<br/>
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial;
+
+  HFTutorial.FileName := 'temp.mp3';
+  HuggingFace.WaitForModel := True;
+
+  HuggingFace.Text.TextToSpeech(
+    procedure (Params: TTextToSpeechParam)
+    begin
+      Params.Model('facebook/mms-tts-eng');
+      Params.Inputs('Hello and welcome. It''s nice to meet you.');
+    end,
+    function : TAsynTextToSpeech
     begin
       Result.Sender := HFTutorial;
       Result.OnStart := Start;
