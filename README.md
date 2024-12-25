@@ -930,6 +930,8 @@ Generate text based on a prompt. For more details about the `text-generation` ta
 ```Pascal
 // uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
 
+  HuggingFace.UseCache := False;
+
   var Chat := HuggingFace.Chat.Completion(
     procedure (Params: TChatPayload)
     begin
@@ -954,6 +956,8 @@ Generate text based on a prompt. For more details about the `text-generation` ta
 
 ```Pascal
 // uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.UseCache := False;
 
   HuggingFace.Chat.Completion(
     procedure (Params: TChatPayload)
@@ -983,7 +987,7 @@ Generate text based on a prompt. For more details about the `text-generation` ta
 ```Pascal
 // uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
   
-  HuggingFace.API.UseCache := False;
+  HuggingFace.UseCache := False;
 
   HuggingFace.Chat.CompletionStream(
     procedure (Params: TChatPayload)
@@ -1014,7 +1018,7 @@ Generate text based on a prompt. For more details about the `text-generation` ta
 ```Pascal
 // uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
 
-  HuggingFace.API.UseCache := False;
+  HuggingFace.UseCache := False;
 
   HuggingFace.Chat.CompletionStream(
     procedure (Params: TChatPayload)
