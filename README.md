@@ -45,6 +45,7 @@ ___
         - [Vision](#Vision)
         - [Use tools](#Use-tools)
     - [Text Generation](#Text-Generation)
+    - [Translation](#Translation)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -1319,6 +1320,48 @@ For more details about the `text-generation` task, check out its [dedicated page
 ```
 
 <br/>
+
+## Translation
+
+Translation is the task of converting text from one language to another.
+
+For more details about the `translation` task, check out its [dedicated page](https://huggingface.co/tasks/translation)! You will find examples and related materials.
+
+>[!NOTE]
+> In the field of `translation` over 5,079 pre-trained models are available. 
+>
+
+<br>
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial;
+
+  HuggingFace.WaitForModel := True;
+
+  //French to english translation
+  HuggingFace.Text.Translation(
+    procedure (Params: TTranslationParam)
+    begin
+      Params.Model('Helsinki-NLP/opus-mt-fr-en');
+      Params.Inputs('Je n''aurais pas dû abuser du chocolat, je crois que je vais le regretter.');
+      Params.Parameters(
+        procedure (var Params: TTranslationParameters)
+        begin
+          Params.SrcLang('french');
+          Params.TgtLang('english');
+        end);
+    end,
+    function : TAsynTranslation
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+
+<br>
 
 # Contributing
 
