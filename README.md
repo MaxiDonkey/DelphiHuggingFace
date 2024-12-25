@@ -48,6 +48,7 @@ ___
     - [Translation](#Translation)
     - [Image Generation](#Image-Generation)
     - [Text-to-Speech](#Text-to-Speech)
+    - [Automatic Speech Recognition](#Automatic-Speech-Recognition)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -1437,6 +1438,55 @@ Convert a text to an audio speech.
 ```
 
 <br/>
+
+## Automatic Speech Recognition
+
+Automatic Speech Recognition (ASR), often referred to as Speech to Text (STT), involves converting spoken audio into written text.
+
+Use Cases:
+- Converting a podcast into text format
+- Creating a voice assistant system
+- Producing subtitles for video content
+
+For more details about the `automatic-speech-recognition` task, check out its [dedicated page](https://huggingface.co/tasks/automatic-speech-recognition)! You will find examples and related materials.
+
+>[!NOTE]
+> In the field of `speech-to-text` over 21,386 pre-trained models are available. 
+>
+
+Suggested Models:
+- [openai/whisper-large-v3](https://huggingface.co/openai/whisper-large-v3): An advanced ASR model developed by OpenAI.
+- [nvidia/canary-1b](https://huggingface.co/nvidia/canary-1b): A robust model supporting multilingual ASR and speech translation, designed by Nvidia.
+- [pyannote/speaker-diarization-3.1](https://huggingface.co/pyannote/speaker-diarization-3.1): A highly effective model for distinguishing and labeling different speakers in audio recordings.
+
+<br/>
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial;
+
+  HuggingFace.API.WaitForModel := True;
+
+  HuggingFace.Audio.AudioToText(
+    procedure (Params: TAudioToTextParam)
+    begin
+      Params.Model('openai/whisper-large-v3-turbo');
+      Params.Inputs('SpeechRecorded.wav');
+      Params.GenerationParameters(
+        procedure (var Params: TGenerationParameters)
+        begin
+          Params.MaxLength(10);
+        end);
+    end,
+    function : TAsynAudioToText
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+Remark: To run this example, you must first record some speech text in a file named `SpeechRecorded.wav`.
 
 # Contributing
 
