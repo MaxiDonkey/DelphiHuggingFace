@@ -40,6 +40,7 @@ ___
 - [Common Ground Functionalities Across API Ecosystems](#Common-Ground-Functionalities-Across-API-Ecosystems)
     - [Embeddings](#Embeddings)
     - [Chat](#Chat)
+        - [Multi Turn Conversation](#Multi-Turn-Conversation)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -867,7 +868,7 @@ Feature extraction is the task of converting a text into a vector (often called 
 For more details about the `Embeddings` task, check out its [dedicated page](https://huggingface.co/tasks/feature-extraction)! You will find examples and related materials.
 
 >[!NOTE]
-> In the field of Embeddingsover 7,400 pre-trained models are available. 
+> In the field of `Embeddings` over 7,400 pre-trained models are available. 
 >
 
 <br/>
@@ -912,6 +913,63 @@ Conversational Large Language Models (LLMs)
 Conversational Vision-Language Models (VLMs)
 - [meta-llama/Llama-3.2-11B-Vision-Instruct](https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct): A powerful vision-language model with excellent capabilities in visual comprehension and reasoning.
 - [Qwen/Qwen2-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2-VL-7B-Instruct): A strong model designed for image-text-to-text tasks.
+
+<br/>
+
+### Multi Turn Conversation
+
+Generate text based on a prompt. For more details about the `text-generation` task, check out its [dedicated page](https://huggingface.co/tasks/text-generation)! You will find examples and related materials.
+
+>[!NOTE]
+> In the field of `text-generation` over 163,600 pre-trained models are available. 
+>
+
+**Synchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  var Chat := HuggingFace.Chat.Completion(
+    procedure (Params: TChatPayload)
+    begin
+      Params.Model('microsoft/Phi-3-mini-4k-instruct');
+      Params.Messages([
+         TPayload.User('Hello'),
+         TPayload.Assistant('Great to meet you. What would you like to know?'),
+         TPayload.User('I have two dogs in my house. How many paws are in my house?')
+      ]);
+      Params.MaxTokens(1024);
+    end);
+  try
+    Display(Memo1, Chat);
+  finally
+    Chat.Free;
+  end;
+```
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.Chat.Completion(
+    procedure (Params: TChatPayload)
+    begin
+      Params.Model('microsoft/Phi-3-mini-4k-instruct');
+      Params.Messages([
+         TPayload.User('Hello'),
+         TPayload.Assistant('Great to meet you. What would you like to know?'),
+         TPayload.User('I have two dogs in my house. How many paws are in my house?')
+      ]);
+      Params.MaxTokens(1024);
+    end,
+    function : TAsynChat
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
 
 <br/>
 
