@@ -46,6 +46,7 @@ ___
         - [Use tools](#Use-tools)
     - [Text Generation](#Text-Generation)
     - [Translation](#Translation)
+    - [Image Generation](#Image-Generation)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -1361,7 +1362,45 @@ For more details about the `translation` task, check out its [dedicated page](ht
     end);
 ```
 
-<br>
+<br/>
+
+## Image Generation
+
+Generate an image based on a given text prompt.
+
+For more details about the `text-to-image` task, check out its [dedicated page](https://huggingface.co/tasks/text-to-image)! You will find examples and related materials.
+
+>[!NOTE]
+> In the field of `text-to-image` over 50,539 pre-trained models are available. 
+>
+
+<br/>
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial;
+
+  HuggingFace.WaitForModel := True;
+  HuggingFace.API.UseCache := False;
+  HFTutorial.FileName := 'Quarter.png';
+
+  HuggingFace.Text.TextToImage(
+    procedure (Params: TTextToImageParam)
+    begin
+      Params.Model('stabilityai/stable-diffusion-3-medium-diffusers');
+      Params.Inputs('A quarter dollar coin placed on a wooden floor in a close-up view');
+    end,
+    function : TAsynTextToImage
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnStart := Start;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+
+<br/>
 
 # Contributing
 
