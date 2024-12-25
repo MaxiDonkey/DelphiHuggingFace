@@ -1139,7 +1139,7 @@ The tool schema used :
 
 <br/>
 
-1. We will use the 'TWeatherReportFunction' plugin defined in the `HuggingFace.Functions.Example` unit.
+1. We will use the `TWeatherReportFunction` plugin defined in the `HuggingFace.Functions.Example` unit.
 
 ```Delphi
   var Weather: IFunctionCore := TWeatherReportFunction.Create;
