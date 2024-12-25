@@ -1045,6 +1045,68 @@ Generate text based on a prompt. For more details about the `text-generation` ta
 
 ### Vision
 
+Models that combine image and text inputs, often referred to as `vision-language` models (VLMs), generate text outputs based on both an image and a text prompt. Unlike traditional `image-to-text` models, which are primarily designed for specific tasks like image captioning, VLMs incorporate an additional layer of versatility by accepting text prompts. Some of these models are even trained to process entire conversations as input, enabling a broader range of applications.
+
+For more details about the `image-text-to-text` task, check out its [dedicated page](https://huggingface.co/tasks/image-text-to-text)! You will find examples and related materials.
+
+>[!NOTE]
+> In the field of `image-text-to-text` over 5,750 pre-trained models are available. 
+>
+
+<br/>
+
+**Synchronously streamed code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.UseCache := False;
+  var ImageFilePath := 'https://tripfixers.com/wp-content/uploads/2019/11/eiffel-tower-with-snow.jpeg';
+
+  HuggingFace.Chat.CompletionStream(
+    procedure (Params: TChatPayload)
+    begin
+      Params.Model('meta-llama/Llama-3.2-11B-Vision-Instruct');
+      Params.Messages([TPayload.User('Describe the image ?', [ImageFilePath])]);
+      Params.Stream(True);
+      Params.MaxTokens(1024);
+    end,
+    procedure (var Chat: TChat; IsDone: Boolean; var Cancel: Boolean)
+    begin
+      if Assigned(Chat) and not IsDone then
+        begin
+          DisplayStream(HFTutorial, Chat);
+          Application.ProcessMessages;
+        end;
+    end);
+```
+
+<br/>
+
+**Asynchronously streamed code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.UseCache := False;
+  var ImageFilePath := 'https://tripfixers.com/wp-content/uploads/2019/11/eiffel-tower-with-snow.jpeg';
+  
+    HuggingFace.Chat.CompletionStream(
+    procedure (Params: TChatPayload)
+    begin
+      Params.Model('meta-llama/Llama-3.2-11B-Vision-Instruct');
+      Params.Messages([TPayload.User('Describe the image ?', [ImageFilePath])]);
+      Params.Stream(True);
+      Params.MaxTokens(1024);
+    end,
+    function : TAsynChatStream
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnProgress := DisplayStream;
+      Result.OnError := DisplayStream;
+    end);
+```
+
 <br/>
 
 # Contributing
