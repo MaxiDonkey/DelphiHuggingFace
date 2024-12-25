@@ -489,8 +489,8 @@ For more details about the `image-classification` task, check out its [dedicated
 > In the field of `image classification`, over 15,000 pre-trained models are available.
 >
 
-[ResNet-50 v1.5](https://huggingface.co/microsoft/resnet-50)
-ResNet model pre-trained on ImageNet-1k at resolution 224x224. It was introduced in the paper Deep Residual Learning for Image Recognition by He et al.
+[ResNet-50 v1.5](https://huggingface.co/microsoft/resnet-50) <br/>
+ResNet model pre-trained on ImageNet-1k at resolution 224x224. It was introduced in the paper [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385) by He et al.
 
 ResNet (Residual Network) is a convolutional neural network that democratized the concepts of residual learning and skip connections. This enables to train much deeper models.
 
