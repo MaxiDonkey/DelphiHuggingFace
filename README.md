@@ -948,6 +948,8 @@ Generate text based on a prompt. For more details about the `text-generation` ta
   end;
 ```
 
+<br/>
+
 **Asynchronously code example**
 
 ```Pascal
@@ -975,6 +977,64 @@ Generate text based on a prompt. For more details about the `text-generation` ta
 <br/>
 
 ### Streamed Multi Turn Conversation
+
+**Synchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+  
+  HuggingFace.API.UseCache := False;
+
+  HuggingFace.Chat.CompletionStream(
+    procedure (Params: TChatPayload)
+    begin
+      Params.Model('microsoft/Phi-3.5-mini-instruct');
+      Params.Messages([
+         TPayload.User('Hello'),
+         TPayload.Assistant('Great to meet you. What would you like to know?'),
+         TPayload.User('I have two dogs in my house. How many paws are in my house?')
+      ]);
+      Params.Stream(True);
+      Params.MaxTokens(1024);
+    end,
+    procedure (var Chat: TChat; IsDone: Boolean; var Cancel: Boolean)
+    begin
+      if Assigned(Chat) and not IsDone then
+        begin
+          DisplayStream(HFTutorial, Chat);
+          Application.ProcessMessages;
+        end;
+    end);
+```
+
+<br/>
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial; 
+
+  HuggingFace.API.UseCache := False;
+
+  HuggingFace.Chat.CompletionStream(
+    procedure (Params: TChatPayload)
+    begin
+      Params.Model('microsoft/Phi-3.5-mini-instruct');
+      Params.Messages([
+         TPayload.User('Hello'),
+         TPayload.Assistant('Great to meet you. What would you like to know?'),
+         TPayload.User('I have two dogs in my house. How many paws are in my house?')
+      ]);
+      Params.Stream(True);
+      Params.MaxTokens(1024);
+    end,
+    function : TAsynChatStream
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnProgress := DisplayStream;
+      Result.OnError := DisplayStream;
+    end);  
+```
 
 <br/>
 
