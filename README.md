@@ -1234,6 +1234,92 @@ For more details about the `text-generation` task, check out its [dedicated page
 
 <br/>
 
+**Synchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial;
+
+  HuggingFace.WaitForModel := True;
+  HuggingFace.UseCache := False;
+
+  var Generation := HuggingFace.Text.Generation(
+    procedure (Params: TTextGenerationParam)
+    begin
+      Params.Model('google/gemma-2-2b-it');
+      Params.Inputs('Can you please let us know more details about your');
+      Params.Parameters(
+        procedure (var Params: TTextGenerationParameters)
+        begin
+          Params.MaxNewTokens(1024);
+          Params.DoSample(True);
+          Params.DecoderInputDetails(True);
+        end);
+    end);
+  try
+    Display(HFTutorial, Generation);
+  finally
+    Generation.Free;
+  end;
+```
+
+<br/>
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial;
+
+  HuggingFace.WaitForModel := True;
+  HuggingFace.UseCache := False;
+
+  HuggingFace.Text.Generation(
+    procedure (Params: TTextGenerationParam)
+    begin
+      Params.Model('google/gemma-2-2b-it');
+      Params.Inputs('Can you please let us know more details about your');
+      Params.Parameters(
+        procedure (var Params: TTextGenerationParameters)
+        begin
+          Params.MaxNewTokens(1024);
+          Params.DoSample(True);
+          Params.DecoderInputDetails(True);
+        end);
+    end,
+    function : TAsynTextGeneration
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
+    end);
+```
+
+<br/>
+
+**Asynchronously streamed code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial;
+
+  HuggingFace.WaitForModel := True;
+  HuggingFace.UseCache := False;
+
+  HuggingFace.Text.GenerationStream(
+    procedure (Params: TTextGenerationParam)
+    begin
+      Params.Model('google/gemma-2-2b-it');
+      Params.Inputs('Can you please let us know more details about your');
+      Params.Stream(True);
+    end,
+    function : TAsynTextGenerationStream
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnProgress := DisplayStream;
+      Result.OnError := Display;
+    end);
+```
+
+<br/>
+
 # Contributing
 
 Pull requests are welcome. If you're planning to make a major change, please open an issue first to discuss your proposed changes.
