@@ -42,6 +42,7 @@ ___
     - [Chat](#Chat)
         - [Multi Turn Conversation](#Multi-Turn-Conversation)
         - [Streamed Multi Turn Conversation](#Streamed-Multi-Turn-Conversation)
+        - [Vision](#Vision)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -1039,6 +1040,10 @@ Generate text based on a prompt. For more details about the `text-generation` ta
       Result.OnError := DisplayStream;
     end);  
 ```
+
+<br/>
+
+### Vision
 
 <br/>
 
