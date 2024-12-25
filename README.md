@@ -41,6 +41,7 @@ ___
     - [Embeddings](#Embeddings)
     - [Chat](#Chat)
         - [Multi Turn Conversation](#Multi-Turn-Conversation)
+        - [Streamed Multi Turn Conversation](#Streamed-Multi-Turn-Conversation)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -970,6 +971,10 @@ Generate text based on a prompt. For more details about the `text-generation` ta
       Result.OnError := Display;
     end);
 ```
+
+<br/>
+
+### Streamed Multi Turn Conversation
 
 <br/>
 
