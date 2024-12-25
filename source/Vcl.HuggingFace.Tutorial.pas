@@ -255,6 +255,7 @@ end;
 
 procedure Display(Sender: TObject; Value: TTextToImage);
 begin
+  Display(Sender, HFTutorial.FEndMessage);
   var Stream := Value.GetStream;
   try
     HFTutorial.Image1.Picture.LoadFromStream(Stream);

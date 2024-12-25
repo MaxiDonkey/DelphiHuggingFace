@@ -267,6 +267,7 @@ end;
 
 procedure Display(Sender: TObject; Value: TTextToImage);
 begin
+  Display(Sender, HFTutorial.FEndMessage);
   var Stream := Value.GetStream;
   try
     HFTutorial.Image1.Bitmap.LoadFromStream(Stream);
@@ -467,7 +468,6 @@ var
   SrcColor: TAlphaColor;
   SrcR, SrcG, SrcB, SrcA: Byte;
   NewR, NewG, NewB: Byte;
-  Row: PRGBTripleArray;
   NewColor: TAlphaColor;
   BitmapData: TBitmapData;
   Bitmap: TBitmap;
