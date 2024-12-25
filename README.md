@@ -1114,6 +1114,26 @@ For more details about the `image-text-to-text` task, check out its [dedicated p
 
 What is the weather in Paris ?
 
+The tool schema used :
+```Json
+  {
+    "type": "object",
+    "properties": {
+         "location": {
+             "type": "string",
+             "description": "The city and department, e.g. Marseille, 13"
+         },
+         "unit": {
+             "type": "string",
+             "enum": ["celsius", "fahrenheit"]
+         }
+     },
+     "required": ["location"]
+  }
+```
+
+<br/>
+
 1. We will use the 'TWeatherReportFunction' plugin defined in the `HuggingFace.Functions.Example` unit.
 
 ```Delphi
