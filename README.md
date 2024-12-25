@@ -43,6 +43,7 @@ ___
         - [Multi Turn Conversation](#Multi-Turn-Conversation)
         - [Streamed Multi Turn Conversation](#Streamed-Multi-Turn-Conversation)
         - [Vision](#Vision)
+        - [Use tools](#Use-tools)
 - [Contributing](#contributing)
 - [License](#license)
  
@@ -1104,6 +1105,99 @@ For more details about the `image-text-to-text` task, check out its [dedicated p
       Result.Sender := HFTutorial;
       Result.OnProgress := DisplayStream;
       Result.OnError := DisplayStream;
+    end);
+```
+
+<br/>
+
+### Use tools
+
+What is the weather in Paris ?
+
+1. We will use the 'TWeatherReportFunction' plugin defined in the `HuggingFace.Functions.Example` unit.
+
+```Delphi
+  var Weather: IFunctionCore := TWeatherReportFunction.Create;
+```
+
+2. We then define a method to display the result of the query using the `Weather` tool.
+
+```Delphi
+procedure TMyForm.FuncExecuteStream(Sender: TObject; Text: string);
+begin
+  HuggingFace.WaitForModel := True;
+  HuggingFace.UseCache := False;
+  HuggingFace.Chat.CompletionStream(
+    procedure (Params: TChatPayload)
+    begin
+      Params.Model('mistralai/Mixtral-8x7B-Instruct-v0.1');
+      Params.Messages([
+        TPayload.System('You are a fun and entertaining weather presenter.'),
+        TPayload.User(Text)]);
+      Params.Stream(True);
+      Params.MaxTokens(1024);
+    end,
+    function : TAsynChatStream
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnProgress := DisplayStream;
+      Result.OnError := DisplayStream;
+    end);
+end;
+```
+
+3. Building the query using the `Weather` tool
+
+**Synchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial, HuggingFace.Functions.Example; 
+
+  HuggingFace.WaitForModel := True;
+  var Weather: IFunctionCore := TWeatherReportFunction.Create;
+  HFTutorial.Func := Weather;
+  HFTutorial.FuncProc := FuncExecuteStream;
+
+  var Chat := HuggingFace.Chat.Completion(
+    procedure (Params: TChatPayload)
+    begin
+      Params.Model('mistralai/Mixtral-8x7B-Instruct-v0.1');
+      Params.Messages([TPayload.User('What is the weather in Paris ?')]);
+      Params.Tools([Weather]);
+      Params.MaxTokens(1024);
+    end);
+  try
+    Display(Memo1, Chat);
+  finally
+    Chat.Free;
+  end;
+```
+
+<br/>
+
+**Asynchronously code example**
+
+```Pascal
+// uses HuggingFace, HuggingFace.Types, HuggingFace.Aggregator, FMX.HuggingFace.Tutorial, HuggingFace.Functions.Example; 
+
+  HuggingFace.WaitForModel := True;
+  var Weather: IFunctionCore := TWeatherReportFunction.Create;
+  HFTutorial.Func := Weather;
+  HFTutorial.FuncProc := FuncExecuteStream;
+
+  HuggingFace.Chat.Completion(
+    procedure (Params: TChatPayload)
+    begin
+      Params.Model('mistralai/Mixtral-8x7B-Instruct-v0.1');
+      Params.Messages([TPayload.User('What is the weather in Paris ?')]);
+      Params.Tools([Weather]);
+      Params.MaxTokens(1024);
+    end,
+    function : TAsynChat
+    begin
+      Result.Sender := HFTutorial;
+      Result.OnSuccess := Display;
+      Result.OnError := Display;
     end);
 ```
 
