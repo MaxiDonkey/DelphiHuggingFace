@@ -164,7 +164,7 @@ uses
 
   function BytesToString(const Value: TBytes): WideString;
 
-  function EncodeBase64(const Value: TStream): WideString; overload;
+  function EncodeBase64(const Value: TStream): string; overload;
 
 implementation
 
@@ -320,7 +320,7 @@ begin
   end;
 end;
 
-function EncodeBase64(const Value: TStream): WideString;
+function EncodeBase64(const Value: TStream): string;
 begin
   var Stream := TMemoryStream.Create;
   var StreamOutput := TStringStream.Create('', TEncoding.UTF8);
